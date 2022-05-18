@@ -17,8 +17,9 @@ export class DatasService {
     }),
   };
 
-  getAirData() {
-    return this.http.get('https://api.waqi.info/feed/paris', {
+  getAirData(city:string) {
+
+    return this.http.get(`https://api.waqi.info/feed/${city}`, {
       responseType: 'json',
       observe: 'response',
       params: {
