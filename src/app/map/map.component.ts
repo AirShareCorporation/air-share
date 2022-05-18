@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
-import { AirQualityService } from '../air-quality.service';
+import { DatasService } from '../services/datas/datas.service';
+
 
 @Component({
   selector: 'app-map',
@@ -26,7 +27,7 @@ export class MapComponent implements AfterViewInit {
   }
 
   constructor(
-    private airQualityService: AirQualityService
+    private datasService: DatasService
   ) { }
 
   ngAfterViewInit(): void {
@@ -34,15 +35,12 @@ export class MapComponent implements AfterViewInit {
   }
 
   receiveData() {
-    this.airQualityService.getData().subscribe((resp: any) => {
-      console.log(resp.body.data.city.geo)
-      console.log(resp.body.data.iaqi.no2)
+    this.datasService.getAirData().subscribe((resp: any) => {
       let city: [number, number] = resp.body.data.city.geo;
 
       var marker = L.marker([...city]).addTo(this.map);
 
       city.forEach(element => {
-        console.log();
 
       });
       marker.bindPopup(`<h4>Taux de no2 :</h4> ${ resp.body.data.iaqi.no2.v}`);
