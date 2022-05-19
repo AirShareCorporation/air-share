@@ -1,6 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {ForumComponent} from "./forum/forum.component";
+import {MapComponent} from "./map/map.component";
 
+
+const routes: Routes = [
+  { path: 'forum', component: ForumComponent},
+  { path: 'map', component: MapComponent},
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+=======
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { RegisterFormComponent } from './forms/register-form/register-form.component';
 import { ForumComponent } from './forum/forum.component';
@@ -16,6 +24,7 @@ const routes: Routes = [
   { path: 'reset', component: ResetFormComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '**', redirectTo: '/' },
+
 ]
 
 @NgModule({

@@ -1,6 +1,6 @@
-import { Component, AfterViewInit } from '@angular/core';
+import {Component, AfterViewInit} from '@angular/core';
 import * as L from 'leaflet';
-import { DatasService } from '../services/datas/datas.service';
+import {DatasService} from '../services/datas/datas.service';
 
 @Component({
   selector: 'app-map',
@@ -9,8 +9,13 @@ import { DatasService } from '../services/datas/datas.service';
 })
 export class MapComponent implements AfterViewInit {
   private map: any;
+
+  pop: string = '';
+
+
   public value: string = "";
   public pollutions: any;
+
 
   private initMap(): void {
 
@@ -37,6 +42,12 @@ export class MapComponent implements AfterViewInit {
     // this.receivedCity()
   }
 
+
+  constructor(
+    private datasService: DatasService
+  ) {
+  }
+
   constructor(private datasService: DatasService) { }
 
   // receivedCity() {
@@ -54,9 +65,17 @@ export class MapComponent implements AfterViewInit {
   //   });
   // };
 
+
   ngAfterViewInit(): void {
     this.initMap();
   }
+
+
+  receiveData() {
+    this.datasService.getAirData().subscribe((resp: any) => {
+      const city: [number, number] = resp.body.data.city.geo;
+      const marker = L.marker([...city]).addTo(this.map);
+
   receiveData(input: string) {
     this.datasService.getAirData(input).subscribe((resp: any) => {
       let city: [number, number] = resp.body.data.city.geo;
@@ -68,8 +87,25 @@ export class MapComponent implements AfterViewInit {
       city.forEach(element => {
 
       });
+
+      marker.bindPopup(`<h4>Taux de no2 :</h4> ${resp.body.data.iaqi.no2.v}`);
+    })
+  }
+
+  getInseeCode(city: string) {
+    // interrogate database here to get the insee code
+    this.receiveCensusData(city);
+  }
+
+  receiveCensusData(code: string) {
+    this.datasService.getCensusData(code).subscribe((resp: any) => {
+      console.log(resp.body.Cellule[0].Valeur);
+    })
+  }
+
+
       marker.bindPopup(popup);
-=======
+
       let marker = L.marker([...city]).addTo(this.map);
       let markerPop = L.popup({
         closeOnClick: true,
@@ -77,6 +113,7 @@ export class MapComponent implements AfterViewInit {
         closeButton: false
       }).setContent(`<h4>Taux de no2 :</h4> ${resp.body.data.iaqi.no2.v}`);
         marker.bindPopup(markerPop);
+
 
     })
   }
