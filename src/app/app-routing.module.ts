@@ -4,8 +4,8 @@ import { ForumComponent } from './forum/forum.component';
 import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
-  { path: 'forum', component: ForumComponent},
-  { path: 'map', component: MapComponent},
+  { path: 'forum', component: ForumComponent },
+  { path: 'map', component: MapComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '**', redirectTo: '/' },
 ]

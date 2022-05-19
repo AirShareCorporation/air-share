@@ -9,22 +9,28 @@ import { catchError, retry } from 'rxjs/operators';
 export class DatasService {
 
   constructor(private http: HttpClient) {
-   }
+  }
 
-   httpOptions = {
+  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
   };
 
-  getAirData(city:string) {
-
+  getAirData(city: string) {
     return this.http.get(`https://api.waqi.info/feed/${city}`, {
       responseType: 'json',
       observe: 'response',
       params: {
         'token': '16d2a1179073e4d1fa5466876faa04c04ef51f71'
       }
-    })
-  }
+    });
+  };
+
+  // getCity() {
+  //   let citys: string[]  = ["paris", "nantes", "poitiers", "marseille"];
+  //   for (const element of citys) {
+  //     this.getAirData(element);
+  //   }
+  // }
 }
