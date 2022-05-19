@@ -4,6 +4,7 @@ import {AdminComponent} from "./admin/admin.component";
 import {ManageUsersComponent} from "./manage-users/manage-users.component";
 import {ManagePostsComponent} from "./manage-posts/manage-posts.component";
 import {AuthGuard} from "../auth/auth.guard";
+import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
 
 const adminRoutes: Routes = [
   {
@@ -16,7 +17,7 @@ const adminRoutes: Routes = [
         children: [
           {path: 'users', component: ManageUsersComponent},
           {path: 'posts', component: ManagePostsComponent},
-          {path: '', component: AdminComponent},
+          {path: '', component: AdminDashboardComponent},
         ]
       }
     ]
