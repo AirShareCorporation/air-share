@@ -14,14 +14,6 @@ const routes: Routes = [
   { path: 'inscription', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'reset', component: ResetFormComponent },
-=======
-import { ForumComponent } from './forum/forum.component';
-import { MapComponent } from './map/map.component';
-
-const routes: Routes = [
-  { path: 'forum', component: ForumComponent },
-  { path: 'map', component: MapComponent },
-
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '**', redirectTo: '/' },
 ]
