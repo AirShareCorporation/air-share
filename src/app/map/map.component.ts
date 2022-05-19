@@ -1,6 +1,6 @@
-import {Component, AfterViewInit} from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
-import {DatasService} from '../services/datas/datas.service';
+import { DatasService } from '../services/datas/datas.service';
 
 @Component({
   selector: 'app-map',
@@ -20,7 +20,7 @@ export class MapComponent implements AfterViewInit {
   private initMap(): void {
 
     let poitiers = L.marker([46.55788402858926, 0.31027544440691246]),
-    nantes = L.marker([47.203677793876885, -1.546413967716054])
+      nantes = L.marker([47.203677793876885, -1.546413967716054])
     let cities = L.layerGroup([poitiers, nantes]);
 
     this.pollutions = L.layerGroup([nantes, poitiers]);
@@ -42,12 +42,6 @@ export class MapComponent implements AfterViewInit {
     // this.receivedCity()
   }
 
-
-  constructor(
-    private datasService: DatasService
-  ) {
-  }
-
   constructor(private datasService: DatasService) { }
 
   // receivedCity() {
@@ -64,48 +58,13 @@ export class MapComponent implements AfterViewInit {
   //     markerParis.bindPopup(markerPopParis);
   //   });
   // };
-
-
   ngAfterViewInit(): void {
     this.initMap();
   }
 
-
-  receiveData() {
-    this.datasService.getAirData().subscribe((resp: any) => {
-      const city: [number, number] = resp.body.data.city.geo;
-      const marker = L.marker([...city]).addTo(this.map);
-
   receiveData(input: string) {
     this.datasService.getAirData(input).subscribe((resp: any) => {
       let city: [number, number] = resp.body.data.city.geo;
-
-      let popup = L.popup({closeButton: false}).setContent(`<h4>Taux de no2 :</h4> ${ resp.body.data.iaqi.no2.v}`)
-
-      var marker = L.marker([...city]).addTo(this.map);
-
-      city.forEach(element => {
-
-      });
-
-      marker.bindPopup(`<h4>Taux de no2 :</h4> ${resp.body.data.iaqi.no2.v}`);
-    })
-  }
-
-  getInseeCode(city: string) {
-    // interrogate database here to get the insee code
-    this.receiveCensusData(city);
-  }
-
-  receiveCensusData(code: string) {
-    this.datasService.getCensusData(code).subscribe((resp: any) => {
-      console.log(resp.body.Cellule[0].Valeur);
-    })
-  }
-
-
-      marker.bindPopup(popup);
-
       let marker = L.marker([...city]).addTo(this.map);
       let markerPop = L.popup({
         closeOnClick: true,
@@ -113,8 +72,16 @@ export class MapComponent implements AfterViewInit {
         closeButton: false
       }).setContent(`<h4>Taux de no2 :</h4> ${resp.body.data.iaqi.no2.v}`);
         marker.bindPopup(markerPop);
-
-
     })
   }
+
+      getInseeCode(city: string) {
+        // interrogate database here to get the insee code
+        this.receiveCensusData(city);
+      }
+      receiveCensusData(code: string) {
+        this.datasService.getCensusData(code).subscribe((resp: any) => {
+          console.log(resp.body.Cellule[0].Valeur);
+        });
+      };
 }
