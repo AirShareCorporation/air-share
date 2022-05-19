@@ -11,6 +11,8 @@ import {DatasService} from '../services/datas/datas.service';
 export class MapComponent implements AfterViewInit {
 
   private map: any;
+  pop: string = '';
+
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -47,10 +49,14 @@ export class MapComponent implements AfterViewInit {
     })
   }
 
+  getInseeCode(city: string) {
+    // interrogate database here to get the insee code
+    this.receiveCensusData(city);
+  }
+
   receiveCensusData(code: string) {
     this.datasService.getCensusData(code).subscribe((resp: any) => {
-      const pop = resp.body.Cellule[0].Valeur;
-      console.log(pop)
+      console.log(resp.body.Cellule[0].Valeur);
     })
   }
 
