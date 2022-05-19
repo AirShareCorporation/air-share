@@ -8,6 +8,7 @@ import { ForumComponent } from './forum/forum.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MapComponent } from './map/map.component';
+import {AdminModule} from "./admin/admin.module";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MapComponent } from './map/map.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
