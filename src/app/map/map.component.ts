@@ -60,6 +60,16 @@ export class MapComponent implements AfterViewInit {
   receiveData(input: string) {
     this.datasService.getAirData(input).subscribe((resp: any) => {
       let city: [number, number] = resp.body.data.city.geo;
+
+      let popup = L.popup({closeButton: false}).setContent(`<h4>Taux de no2 :</h4> ${ resp.body.data.iaqi.no2.v}`)
+
+      var marker = L.marker([...city]).addTo(this.map);
+
+      city.forEach(element => {
+
+      });
+      marker.bindPopup(popup);
+=======
       let marker = L.marker([...city]).addTo(this.map);
       let markerPop = L.popup({
         closeOnClick: true,
@@ -67,6 +77,7 @@ export class MapComponent implements AfterViewInit {
         closeButton: false
       }).setContent(`<h4>Taux de no2 :</h4> ${resp.body.data.iaqi.no2.v}`);
         marker.bindPopup(markerPop);
+
     })
   }
 }
