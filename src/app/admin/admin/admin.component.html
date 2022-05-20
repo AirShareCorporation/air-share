@@ -1,5 +1,5 @@
 <div class="admin flex flex-row font-mono">
-  <div class="sidebar basis-1/5 text-white text-4xl h-screen bg-indigo-600 px-10 py-10">
+  <div class="sidebar basis-1/5 text-white text-3xl h-screen bg-indigo-600 px-10 py-10">
     <div class="flex flex-col my-5">
       <div class="dashboard flex flex-row items-center my-8">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-300 mr-5" fill="none"
@@ -37,14 +37,17 @@
           <div class="flex items-center">
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
-                <a href="#" class="text-amber-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-2xl font-medium">Back To Site</a>
-                <a href="#" class="text-amber-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-2xl font-medium">Disconnect</a>
+                <a routerLink="/" routerLinkActive="active"
+                   class="text-amber-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-2xl font-medium">Back
+                  To Site</a>
+                <a routerLink="/logout" routerLinkActive="active"
+                   class="text-amber-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-2xl font-medium">Disconnect</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </div>
 </div>
