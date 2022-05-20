@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Router, Event, NavigationStart} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  isInAdmin: boolean = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart && event.url.split('/')[1] == 'admin') {
+        this.isInAdmin = true;
+      }
+    })
+  }
+
   title = 'air-share';
 }

@@ -15,9 +15,9 @@ const adminRoutes: Routes = [
       {
         path: '',
         children: [
+          {path: 'dashboard', component: AdminDashboardComponent},
           {path: 'users', component: ManageUsersComponent},
           {path: 'posts', component: ManagePostsComponent},
-          {path: '', component: AdminDashboardComponent},
         ]
       }
     ]

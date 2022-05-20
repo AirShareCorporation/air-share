@@ -5,18 +5,17 @@ import {MapComponent} from "./map/map.component";
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { RegisterFormComponent } from './forms/register-form/register-form.component';
 import { ResetFormComponent } from './forms/reset-form/reset-form.component';
+import {AdminComponent} from "./admin/admin/admin.component";
 
 
 const routes: Routes = [
-  { path: "", component: ForumComponent  },
   { path: 'forum', component: ForumComponent },
   { path: 'map', component: MapComponent },
+  { path: 'admin', component: AdminComponent },
   { path: 'inscription', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'reset', component: ResetFormComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: '**', redirectTo: '/' },
-
 ]
 
 @NgModule({
