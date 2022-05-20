@@ -13,6 +13,7 @@ import {AdminModule} from "./admin/admin.module";
 import { RegisterFormComponent } from './forms/register-form/register-form.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { ResetFormComponent } from './forms/reset-form/reset-form.component';
+import { HomPageComponent } from './hom-page/hom-page.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ResetFormComponent } from './forms/reset-form/reset-form.component';
     MapComponent,
     RegisterFormComponent,
     LoginFormComponent,
-    ResetFormComponent
+    ResetFormComponent,
+    HomPageComponent
   ],
   imports: [
     BrowserModule,

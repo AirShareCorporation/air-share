@@ -3,7 +3,11 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'meteo': "url('../src/assets/meteo.jpg')",
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
