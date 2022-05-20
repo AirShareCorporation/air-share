@@ -1,16 +1,30 @@
-<div id="header">
-        <div>
-                <h1>Airshare</h1>
+<div id="header" class="w-screen flex justify-around bg-teal-700 h-32">
+        <div class="w-4/12 self-center">
+                <h1 class="text-5xl text-white  text-center">Airshare</h1>
         </div>
-        <nav>
-                <div>
-                        <a routerLink="Accueil">Accueil</a>
-                        <a routerLink="forum">Forum</a>
 
+        <nav class="flex flex-nowrap justify-around w-6/12 basis-3/4">
+                <div class="w-5/12 flex justify-between items-center">
+                        <a href="/" class="text-white text-3xl transition ease-in hover:text-cyan-200">Accueil</a>
+                        <a routerLink="/forum" class="text-white text-3xl transition ease-in hover:text-cyan-200">Forum</a>
+                        <div class="mt-5">
+                                <button type="button" class="text-white text-3xl transition ease-in hover:text-cyan-200 flex flex-col" (click)="toggleDropdown()">
+                                        Cartes
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 text-center text-white" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                </button>
+
+
+                                <div class="left-auto absolute mt-2 w-72 rounded-md shadow-lg bg-teal-700 flex flex-col ring-1 ring-black ring-opacity-5 focus:outline-none top-auto" >
+                                        <a routerLink="" class="text-white self-center text-3xl transition ease-in hover:text-cyan-200">Méteo</a>
+                                        <a routerLink="" class="text-white self-center text-3xl transition ease-in hover:text-cyan-200">Qualité de l'air</a>
+                                </div>
+                        </div>
                 </div>
-                <div>
-                        <a routerLink="inscription">Créer un compte</a>
-                        <a routerLink="login">Login</a>
+                <div class="w-2/6 flex justify-between">
+                        <a routerLink="/inscription" class="text-white self-center text-3xl transition ease-in hover:text-cyan-200">Créer un compte</a>
+                        <a routerLink="/login" class="text-white self-center text-3xl transition ease-in hover:text-cyan-200">Login</a>
 
                 </div>
         </nav>
