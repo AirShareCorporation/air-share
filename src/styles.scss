@@ -1,36 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-@import '~normalize.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-* {
-        box-sizing: border-box;
-        outline: none;
-}
-
-
-html {
-        font-size: 62.5%;
-        font-family: "Trebuchet MS", Helvetica, sans-serif
-}
-
-
-.form {
-        display: flex;
-        flex-direction: column;
-        width: 25%;
-        margin: auto;
-        font-size: 1.6rem;
-}
-
-.form button {
-        margin-top: 20px;
-}
-
-h2 {
-        font-size: 2.4rem;
-        text-align: center;
-
-}
