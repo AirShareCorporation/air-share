@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +32,7 @@ export class DatasService {
   // getCity() {
   //   let citys: string[]  = ["paris", "nantes", "poitiers", "marseille"];
   //   for (const element of citys) {
-  //     this.getAirData(element);
+  //    this.getAirData(element);
   //   }
   // }
 }
