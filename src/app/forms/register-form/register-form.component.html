@@ -1,25 +1,30 @@
-<h2 class="mt-12">Création du compte</h2>
+<div class="text-center mb-5">
+  <h2 class="mt-12 text-3xl">Création du compte</h2>
+</div>
 
-<form class="form">
-        <label for="name">Nom</label>
-        <input type="text" name="name" id="input_name">
-        <label for="surname">Prénom</label>
-        <input type="text" name="surname" id="input_surname">
-        <label for="mail">E-mail</label>
-        <input type="text" name="mail" id="input_mail">
-        <label for="zip">Code-Postal</label>
-        <input type="text" name="zip" id="input_zip">
-        <label for="address">Addresse</label>
-        <input type="text" name="address" id="input_address">
-        <label for="password">Mot-de-passe</label>
-        <input type="password" name="password" id="input-password">
-        <label for="password-confirm">Confirmation de mot-de-passe</label>
-        <input type="password" name="password-confirm" id="input-confirm">
+<div>
+  <form class="form flex flex-col mx-auto w-96">
+    <label for="name">Nom</label>
+    <input class="rounded-md border-none drop-shadow-md" type="text" name="name" id="input_name" placeholder="Nom">
+    <label for="surname">Prénom</label>
+    <input class="rounded-md border-none drop-shadow-md" type="text" name="surname" id="input_surname" placeholder="Prénom">
+    <label for="mail">E-mail</label>
+    <input class="rounded-md border-none drop-shadow-md" type="text" name="mail" id="input_mail" placeholder="E-mail">
+    <label for="zip">Code-Postal</label>
+    <input class="rounded-md border-none drop-shadow-md" type="text" name="zip" id="input_zip" placeholder="Code-Postal">
+    <label for="address">Addresse</label>
+    <input class="rounded-md border-none drop-shadow-md" type="text" name="address" id="input_address" placeholder="Adresse">
+    <label for="password">Mot-de-passe</label>
+    <input class="rounded-md border-none drop-shadow-md" type="password" name="password" id="input-password" placeholder="Mot de passe">
+    <label for="password-confirm">Confirmation de mot-de-passe</label>
+    <input class="rounded-md border-none drop-shadow-md" type="password" name="password-confirm" id="input-confirm" placeholder="Confirmation mot de passe">
 
-        <div class="text-center mt-5">
-                <input class="mr-2" type="checkbox" name="use-terms" id="use-terms">
-                <label for="use-terms">J'accepte les conditions d'utilisations</label>
-        </div>
+    <div class="text-center mt-5 mb-5">
+            <input class="mr-2" type="checkbox" name="use-terms" id="use-terms">
+            <label for="use-terms">J'accepte les conditions d'utilisations</label>
+    </div>
 
-        <button class="bg-green-500 transition ease-in hover:bg-cyan-500 text-white font-bold py-2 px-4 rounded" type="button">Valider</button>
+    <button class="bg-green-500 transition ease-in hover:bg-cyan-500 text-white font-bold py-2 px-4 rounded" type="button">Valider</button>
 </form>
+</div>
+

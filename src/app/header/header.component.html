@@ -5,7 +5,7 @@
 
         <nav class="flex flex-nowrap justify-around w-6/12 basis-3/4">
                 <div class="w-5/12 flex justify-between items-center">
-                        <a href="/" class="text-white text-3xl transition ease-in hover:text-cyan-200">Accueil</a>
+                        <a routerLink="/Accueil" class="text-white text-3xl transition ease-in hover:text-cyan-200">Accueil</a>
                         <a routerLink="/forum" class="text-white text-3xl transition ease-in hover:text-cyan-200">Forum</a>
                         <div class="mt-5">
                                 <button type="button" class="text-white text-3xl transition ease-in hover:text-cyan-200 flex flex-col" (click)="toggleDropdown()">
@@ -25,7 +25,7 @@
                 <div class="w-2/6 flex justify-between">
                         <a routerLink="/inscription" class="text-white self-center text-3xl transition ease-in hover:text-cyan-200">Créer un compte</a>
                         <a routerLink="/login" class="text-white self-center text-3xl transition ease-in hover:text-cyan-200">Login</a>
-                        
+
                         <a routerLink="admin/dashboard">Admin</a>
                 </div>
         </nav>
