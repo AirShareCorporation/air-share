@@ -1,31 +1,8 @@
-
-#header, #header a {
-        color: rgb(255, 255, 255);
-}
-
-
-#header {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        background-color: rgba(51, 140, 178, 1);
-        font-size: 1.8rem;
-}
-
-
 #header nav {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 60%;
-}
-#header nav div {
-        display: flex;
-        justify-content: space-around;
-        width: 30%;
+  display: flex;
+  width: 60%;
 }
 
 #header a {
-        text-decoration: none;
+  text-decoration: none;
 }
-

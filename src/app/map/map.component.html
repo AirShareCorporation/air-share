@@ -1,15 +1,45 @@
-<section class="grid grid-cols-2">
-  <div>
+<div class="flex justify-center mt-5">
+  <input #inputCity name="city"  type="text" placeholder="recherche une ville" class="rounded" autocomplete="off"/>
+  <button (click)="receiveData(inputCity.value)" type="submit" class="bg-blue-500 text-white p-1 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
+</div>
+<section class="grid grid-cols-2 font-mono">
+  <div class=" w-96 h-96 rounded shadow-lg mx-auto p-10 mt-40">
     <div>
-      <div id="map" class="h-screen"></div>
+      <h1 class="text-center text-lg text-[#4B63A8]">Indice de qualité de l'air</h1>
+        <div class="flex items-center justify-center mt-5">
+          <ul>
+            <li class="mb-3 text-[#4B63A8] text-lg">
+              <i class="circle-green align-middle"></i>
+              Bon
+            </li>
+            <li class="mb-3 text-[#4B63A8] text-lg">
+              <i class="circle-yellow align-middle"></i>
+              Moyen
+            </li>
+            <li class="mb-3 text-[#4B63A8] text-lg">
+              <i class="circle-orange align-middle"></i>
+              Dégradé
+            </li>
+            <li class="mb-3 text-[#4B63A8] text-lg">
+              <i class="circle-red align-middle"></i>
+              Mauvais
+            </li>
+            <li class="mb-3 text-[#4B63A8] text-lg">
+              <i class="circle-purple align-middle"></i>
+              Très mauvais
+            </li>
+            <li class="mb-3 text-[#4B63A8] text-lg">
+              <i class="circle-dark align-middle"></i>
+              Dangereux
+            </li>
+          </ul>
+        </div>
     </div>
   </div>
-  <div>
-    <input type="text" placeholder="recherche une ville" class="rounded p-1 mt-2 mb-2">
-    <button>Validez</button>
+  <div class="h-screen mt-10">
+    <div id="map" class="w-5/6"></div>
   </div>
 </section>
-
 
 
 
