@@ -8,12 +8,13 @@ import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.compone
 
 const adminRoutes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent,
     canActivate: [AuthGuard],
     children: [
       {
         path: '',
+        canActivateChild: [AuthGuard],
         children: [
           {path: 'dashboard', component: AdminDashboardComponent},
           {path: 'users', component: ManageUsersComponent},
