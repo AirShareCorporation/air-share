@@ -1,10 +1,9 @@
-<div id="header" class="bg-sky-600 w-screen text-xl flex justify-around bg-teal-700 py-4">
-
-
+<div id="header" class="bg-sky-600 w-screen text-xl flex justify-around py-4">
         <nav class=" border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                 <div class="container flex flex-wrap items-center justify-between mx-auto">
                   <a href="#" class="flex items-center">
-                      <span class="self-center text-3xl font-semibold whitespace-nowrap text-white">Airshare</span>
+                        <img src="../../assets/air-quality.png" alt="Aishare-logo" class="mr-3 h-8 text-white">  
+                        <span class="self-center text-3xl font-semibold whitespace-nowrap text-white">Airshare</span>
                   </a>
                         <ul class="flex mt-4 mt-0 text-sm font-medium">
                                 <li>
@@ -14,8 +13,8 @@
                                         <a routerLink="/forum" class=" text-xl block pl-3 pr-4 text-white rounded transition ease-in hover:text-gray-300" aria-current="page">Forum</a>
                         </li>
                         <li>
-                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-xl flex items-center text-white justify-between w-full pl-3 pr-4 f hover:bg-transparent transition ease-in hover:text-gray-300" (click)="toggleDropdown($event)" #btnDropdownRef >Cartes <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
-                                <div class="z-50" #popoverDropdownRef>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-xl flex items-center text-white justify-between w-full pl-3 pr-4 f hover:bg-transparent transition ease-in hover:text-gray-300" (click)="toggleDropdown($event)" #btnDropdown >Cartes <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                                <div class="z-50" #popoverDropdown>
                                         <ul id="dropdownNavbar" class=" bg-sky-600 px-5 py-5 rounded divide-y divide-white-100 rounded shadow w-44" [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'">
                                                 <li>
                                                         <a routerLink="" class="text-white mb-2 text-xl self-center transition ease-in hover:text-gray-300">Méteo</a>
@@ -27,7 +26,7 @@
                                 </div>
                         </li>
                         <li>
-                                <a routerLink="inscription" class="text-white text-xl block pl-3 pr-4 hover:bg-transparent border-0 transition ease-in hover:text-gray-300">Créer un compte</a>
+                                <a routerLink="/inscription" class="text-white text-xl block pl-3 pr-4 hover:bg-transparent border-0 transition ease-in hover:text-gray-300">Créer un compte</a>
                         </li>
                         <li>
                                 <a routerLink="/login" class="text-white text-xl block pl-3 pr-4 hover:bg-transparent border-0 transition ease-in hover:text-gray-300">Login</a>
