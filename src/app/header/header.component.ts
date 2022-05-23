@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
 
   toggleDropdown(event : any) {
     event.preventDefault();
+
     if (this.dropdownPopoverShow) {
       this.dropdownPopoverShow = false;
     } else {
