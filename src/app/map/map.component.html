@@ -1,9 +1,13 @@
+<div class="mt-10 mx-20">
+  <h1 class="text-3xl text-[#4B63A8] font-bold">La qualité de l'air près de chez vous</h1>
+</div>
+
 <div class="flex justify-center mt-5">
   <input #inputCity name="city"  type="text" placeholder="recherche une ville" class="rounded" autocomplete="off"/>
   <button (click)="receiveData(inputCity.value)" type="submit" class="bg-blue-500 text-white p-1 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
 </div>
-<section class="grid grid-cols-2 font-mono">
-  <div class=" w-96 h-96 rounded shadow-lg mx-auto p-10 mt-40">
+<section class="grid grid-cols-3 font-mono">
+  <div class=" w-96 h-96 rounded shadow-lg mx-auto p-10 mt-10">
     <div>
       <h1 class="text-center text-lg text-[#4B63A8]">Indice de qualité de l'air</h1>
         <div class="flex items-center justify-center mt-5">
@@ -37,7 +41,17 @@
     </div>
   </div>
   <div class="h-screen mt-10">
-    <div id="map" class="w-5/6"></div>
+    <div id="map" class="w-full"></div>
+  </div>
+  <div class="mx-auto mt-10">
+    <input type="text" placeholder="recensement d'une ville" class="rounded w-64" autocomplete="off"/>
+    <button type="submit" class="bg-blue-500 text-white p-1 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
+    <div class="mt-20 w-72">
+      <div class="border-2 border-black rounded-md p-3">
+        <span>Ville : Nantes</span>
+        <p>Population : 22501</p>
+      </div>
+    </div>
   </div>
 </section>
 
