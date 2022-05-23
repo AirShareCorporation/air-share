@@ -5,6 +5,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminComponent } from './admin/admin.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { ManagePostsComponent } from './manage-posts/manage-posts.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -12,11 +14,13 @@ import { ManagePostsComponent } from './manage-posts/manage-posts.component';
     AdminDashboardComponent,
     AdminComponent,
     ManageUsersComponent,
-    ManagePostsComponent
+    ManagePostsComponent,
+    UserDetailComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ]
 })
 export class AdminModule { }
