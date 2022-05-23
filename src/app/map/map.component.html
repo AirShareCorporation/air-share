@@ -1,12 +1,22 @@
-
-<div class="map-container font-mono">
-  <div class="map-frame">
-    <div id="map" class="w-96 h-96"></div>
-    <input #inputCity type="text" name="city" class="rounded-full p-0"/>
-    <button class="p-1 rounded-full bg-blue-500 text-white" (click)="receiveData(inputCity.value)" type="submit">
-      Validez
-    </button>
+<section class="grid grid-cols-2">
+  <div>
+    <div>
+      <div id="map" class="h-screen"></div>
+    </div>
   </div>
-  <input #code type="text" class="rounded-full p-0" name="census" id="census" placeholder="Enter a city">
-  <button class="p-1 rounded-full bg-blue-500 text-white" (click)="getInseeCode(code.value)">Validez</button>
-</div>
+  <div>
+    <input type="text" placeholder="recherche une ville" class="rounded p-1 mt-2 mb-2">
+    <button>Validez</button>
+  </div>
+</section>
+
+
+
+
+
+
+
+  <!-- <input #inputCity type="text" name="city" class="rounded-full p-0"/>
+  <button class="p-1 rounded-full bg-blue-500 text-white" (click)="receiveData(inputCity.value)" type="submit">Validez</button> -->
+  <!-- <input #code type="text" class="rounded-full p-0" name="census" id="census" placeholder="Enter a city">
+  <button class="p-1 rounded-full bg-blue-500 text-white" (click)="getInseeCode(code.value)">Validez</button> -->
