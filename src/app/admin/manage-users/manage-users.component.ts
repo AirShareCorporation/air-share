@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from "../../interfaces/user";
-import {USERS} from "../../mocks/mock-users";
+import {UsersService} from "../../services/users/users.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-manage-users',
@@ -9,10 +10,20 @@ import {USERS} from "../../mocks/mock-users";
 })
 export class ManageUsersComponent implements OnInit {
 
-  users: User[] = USERS;
+  users: User[] = [];
 
-  constructor() { }
+  constructor(private userService: UsersService, private router: Router) {
+  }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.userService.getUsers().subscribe(users => this.users = users);
+  }
+
+  selectUser(user: User) {
+    this.router.navigate(['admin', 'users', 'detail', user.id]);
   }
 }

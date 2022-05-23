@@ -10,7 +10,7 @@
       <dd class="mx-5 text-center">Actions</dd>
     </div>
     <div id="topics-list" class="overflow-scroll">
-      <div *ngFor="let topic of topics" class="grid grid-cols-5 items-center text-md font-medium px-5 py-8 border-b border-gray-200">
+      <div *ngFor="let topic of topics" class="grid grid-cols-5 items-center text-md font-medium px-5 py-2 border-b border-gray-200">
         <dt class="mx-5 basis-1/5">{{topic.written_at}}</dt>
         <dd class="mx-5 basis-1/5 text-gray-800">{{topic.title}}</dd>
         <dd class="mx-5 basis-1/5 text-gray-800">{{topic.message | slice:0:50}}...</dd>
@@ -42,7 +42,7 @@
       <dd class="mx-5 text-center">Actions</dd>
     </div>
     <div id="responses-list" class="overflow-scroll">
-      <div *ngFor="let response of responses" class="grid grid-cols-5 items-center text-md font-medium px-5 py-8 border-b border-gray-200">
+      <div *ngFor="let response of responses" class="grid grid-cols-5 items-center text-md font-medium px-5 py-2 border-b border-gray-200">
         <dt class="mx-5 basis-1/5">{{response.written_at}}</dt>
         <dd class="mx-5 basis-1/5 text-gray-800">{{response.content | slice:0:50}}...</dd>
         <dd class="mx-5 basis-1/5 text-gray-800">{{response.user_id}}</dd>

@@ -11,7 +11,7 @@
       <dd class="mx-5 text-center">Actions</dd>
     </div>
     <div *ngFor="let user of users"
-         class="grid grid-cols-7 items-center text-md font-medium px-5 py-8 border-b border-gray-200 text-gray-800">
+         class="grid grid-cols-7 items-center text-md font-medium px-5 py-2 border-b border-gray-200 text-gray-800">
       <dt class="mx-5 basis-1/7">{{user.first_name}} {{user.last_name}}</dt>
       <dd class="mx-5 basis-1/7">{{user.mail_adress}}</dd>
       <dd class="mx-5 basis-1/7">{{user.password}}</dd>
@@ -19,7 +19,7 @@
       <dd class="mx-5 basis-1/7">{{user.status_id}}</dd>
       <dd class="mx-5 basis-1/7">{{user.moderationStatus_id}}</dd>
       <div class="icons flex flex-row items-center justify-evenly">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 cursor-pointer" fill="none"
+        <svg (click)="selectUser(user)" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 cursor-pointer" fill="none"
              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
           <path stroke-linecap="round" stroke-linejoin="round"
