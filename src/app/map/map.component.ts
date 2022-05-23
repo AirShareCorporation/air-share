@@ -24,8 +24,8 @@ export class MapComponent implements AfterViewInit {
 
     this.pollutions = L.layerGroup([nantes, poitiers]);
     this.map = L.map('map', {
-      center: [47.61758691082487, 2.5587330111103377],
-      zoom: 5.5,
+      center: [48.27085104759533, 2.3550708333535915],
+      zoom: 6,
     });
 
     let layerControl = L.control.layers().addTo(this.map);

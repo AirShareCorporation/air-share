@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'meteo': "url('../src/assets/meteo.jpg')",
-      }
+        },
     },
   },
   plugins: [
