@@ -13,27 +13,27 @@
   <div class="border-t border-gray-200">
     <dl>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Title</dt>
+        <label class="text-sm font-medium text-gray-500 py-2.5">Title</label>
         <input [(ngModel)]="topic.title" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Content</dt>
+        <label class="text-sm font-medium text-gray-500 py-2.5">Content</label>
         <textarea [(ngModel)]="topic.message" type="text" class="h-44 mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"></textarea>
       </div>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Written At</dt>
-        <input [(ngModel)]="topic.written_at" type="date" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <label class="text-sm font-medium text-gray-500 py-2.5">Written At</label>
+        <input [(ngModel)]="topic.written_at" type="datetime-local" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">User</dt>
+        <label class="text-sm font-medium text-gray-500 py-2.5">User</label>
         <input [(ngModel)]="topic.user_id" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Category</dt>
+        <label class="text-sm font-medium text-gray-500 py-2.5">Category</label>
         <input [(ngModel)]="topic.category_id" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Highlight ?</dt>
+        <label class="text-sm font-medium text-gray-500 py-2.5">Highlight ?</label>
         <input [(ngModel)]="topic.highlight" type="checkbox" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
     </dl>

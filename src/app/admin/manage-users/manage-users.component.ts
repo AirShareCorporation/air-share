@@ -26,4 +26,9 @@ export class ManageUsersComponent implements OnInit {
   selectUser(user: User) {
     this.router.navigate(['admin', 'users', 'detail', user.id]);
   }
+
+  deleteUser(user: User) {
+    this.users = this.users.filter(u => u !== user);
+    this.userService.deleteUser(user.id).subscribe();
+  }
 }

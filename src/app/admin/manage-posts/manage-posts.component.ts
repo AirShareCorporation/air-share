@@ -10,8 +10,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./manage-posts.component.scss']
 })
 export class ManagePostsComponent implements OnInit {
-
   topics: Topic[] = [];
+
   responses: Response[] = [];
 
   constructor(private forumService: ForumService, private router: Router) {
@@ -36,6 +36,16 @@ export class ManagePostsComponent implements OnInit {
 
   selectResponse(response: Response) {
     this.router.navigate(['admin', 'posts', 'responses', 'detail', response.id]);
+  }
+
+  deleteTopic(topic: Topic) {
+    this.topics = this.topics.filter(t => t !== topic);
+    this.forumService.deleteTopic(topic.id).subscribe();
+  }
+
+  deleteResponse(response: Response) {
+    this.responses = this.responses.filter(r => r !== response);
+    this.forumService.deleteResponse(response.id).subscribe();
   }
 
 }

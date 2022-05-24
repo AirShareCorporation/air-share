@@ -4,8 +4,6 @@ import {Response} from "../../interfaces/response";
 import {RESPONSES} from "../../mocks/mock-responses";
 import {Topic} from "../../interfaces/topic";
 import {TOPICS} from "../../mocks/mock-topics";
-import {User} from "../../interfaces/user";
-import {USERS} from "../../mocks/mock-users";
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +26,13 @@ export class ForumService {
   getResponse(id: number): Observable<Response> {
     const response = RESPONSES.find(r => r.id === id)!;
     return of(response);
+  }
+
+  deleteTopic(id: number): Observable<Topic[]> {
+    return of(TOPICS.filter(t => t.id !== id));
+  }
+
+  deleteResponse(id: number): Observable<Response[]> {
+    return of(RESPONSES.filter(r => r.id !== id));
   }
 }
