@@ -14,32 +14,38 @@
   <div class="border-t border-gray-200">
     <dl>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <label class="text-sm font-medium text-gray-500 py-2.5">First name</label>
-        <input [(ngModel)]="user.first_name" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <label for="user-firstname" class="text-sm font-medium text-gray-500 py-2.5">First name</label>
+        <input [(ngModel)]="user.first_name" id="user-firstname" type="text"
+               class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <label class="text-sm font-medium text-gray-500 py-2.5">Last name</label>
-        <input [(ngModel)]="user.last_name" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <label for="user-lastname" class="text-sm font-medium text-gray-500 py-2.5">Last name</label>
+        <input [(ngModel)]="user.last_name" id="user-lastname" type="text"
+               class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <label class="text-sm font-medium text-gray-500 py-2.5">Mail Address</label>
-        <input [(ngModel)]="user.mail_adress" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <label for="user-mail" class="text-sm font-medium text-gray-500 py-2.5">Mail Address</label>
+        <input [(ngModel)]="user.mail_adress" id="user-mail" type="text"
+               class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <label class="text-sm font-medium text-gray-500 py-2.5">Password</label>
-        <input [(ngModel)]="user.password" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <label for="user-password" class="text-sm font-medium text-gray-500 py-2.5">Password</label>
+        <input [(ngModel)]="user.password" id="user-password" type="text"
+               class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <label class="text-sm font-medium text-gray-500 py-2.5">Role</label>
-        <input [(ngModel)]="user.role_id" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <label for="user-role" class="text-sm font-medium text-gray-500 py-2.5">Role</label>
+        <input [(ngModel)]="user.role_id" id="user-role" type="text"
+               class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <label class="text-sm font-medium text-gray-500 py-2.5">Connection Status</label>
-        <input [(ngModel)]="user.status_id" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+        <label for="user-connection" class="text-sm font-medium text-gray-500 py-2.5">Connection Status</label>
+        <input [(ngModel)]="user.status_id" id="user-connection" type="text"
+               class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <label class="text-sm font-medium text-gray-500 py-2.5">Moderation Status</label>
-        <input [(ngModel)]="user.moderationStatus_id" type="text"
+        <label for="user-moderation" class="text-sm font-medium text-gray-500 py-2.5">Moderation Status</label>
+        <input [(ngModel)]="user.moderationStatus_id" id="user-moderation" type="text"
                class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
       </div>
     </dl>
