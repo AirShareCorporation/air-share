@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import * as L from 'leaflet';
 import { DatasService } from 'src/app/services/datas/datas.service';
 
@@ -62,7 +62,6 @@ export class AirQualityComponent implements AfterViewInit {
   }
 
   /**
-   *
    * @param input Receive the value city
    * @returns City API datas.services
    */
