@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {User} from "../../interfaces/user";
+import { User } from 'src/app/interfaces/user';
 import {USERS} from "../../mocks/mock-users";
 
 @Injectable({
