@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'reset', component: ResetFormComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: 'forum', loadChildren: () => import('./forum/forum.module').then(m => m.ForumModule) },
 ]
 
 @NgModule({

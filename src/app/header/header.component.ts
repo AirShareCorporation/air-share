@@ -4,7 +4,10 @@ import { createPopper } from "@popperjs/core";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  host: {
+    '(document:click)': 'closeDropdown($event)',
+  }
 })
 export class HeaderComponent implements OnInit {
 
@@ -12,8 +15,15 @@ export class HeaderComponent implements OnInit {
 
   dropdownPopoverShow = false;
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef!: ElementRef;
+  @ViewChild("dropdownContainer", { static: false }) dropdownContainer!: ElementRef;
   @ViewChild("popoverDropdownRef", { static: false })
   popoverDropdownRef!: ElementRef;
+  
+
+  constructor(private _elementRef : ElementRef) { }
+
+  ngOnInit(): void {
+  }
 
   ngAfterViewInit() {
     createPopper(
@@ -34,10 +44,14 @@ export class HeaderComponent implements OnInit {
       this.dropdownPopoverShow = true;
     }
   }
-  constructor() { }
 
-  ngOnInit(): void {
+
+
+  closeDropdown(event: any) {
+
+    if(!this.dropdownContainer.nativeElement.contains(event.target) && this.dropdownPopoverShow) {
+      this.dropdownPopoverShow = false
+    }
   }
-
 
 }
