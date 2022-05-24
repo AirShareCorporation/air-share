@@ -11,6 +11,12 @@ import { TopicDetailComponent } from './posts/topic-detail/topic-detail.componen
 import { ResponseDetailComponent } from './posts/response-detail/response-detail.component';
 import { ManageCategoriesComponent } from './categories/manage-categories/manage-categories.component';
 import { CategoryDetailComponent } from './categories/category-detail/category-detail.component';
+import { ManageRolesComponent } from './roles/manage-roles/manage-roles.component';
+import { ManageStatusComponent } from './status/manage-status/manage-status.component';
+import { ManageUnitsComponent } from './units/manage-units/manage-units.component';
+import { RoleDetailComponent } from './roles/role-detail/role-detail.component';
+import { StatusDetailComponent } from './status/status-detail/status-detail.component';
+import { UnitDetailComponent } from './units/unit-detail/unit-detail.component';
 
 
 @NgModule({
@@ -23,7 +29,13 @@ import { CategoryDetailComponent } from './categories/category-detail/category-d
     TopicDetailComponent,
     ResponseDetailComponent,
     ManageCategoriesComponent,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    ManageRolesComponent,
+    ManageStatusComponent,
+    ManageUnitsComponent,
+    RoleDetailComponent,
+    StatusDetailComponent,
+    UnitDetailComponent
   ],
   imports: [
     CommonModule,

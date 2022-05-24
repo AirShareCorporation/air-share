@@ -10,6 +10,12 @@ import {TopicDetailComponent} from "./posts/topic-detail/topic-detail.component"
 import {ResponseDetailComponent} from "./posts/response-detail/response-detail.component";
 import {ManageCategoriesComponent} from "./categories/manage-categories/manage-categories.component";
 import {CategoryDetailComponent} from "./categories/category-detail/category-detail.component";
+import {ManageRolesComponent} from "./roles/manage-roles/manage-roles.component";
+import {RoleDetailComponent} from "./roles/role-detail/role-detail.component";
+import {ManageStatusComponent} from "./status/manage-status/manage-status.component";
+import {StatusDetailComponent} from "./status/status-detail/status-detail.component";
+import {ManageUnitsComponent} from "./units/manage-units/manage-units.component";
+import {UnitDetailComponent} from "./units/unit-detail/unit-detail.component";
 
 const adminRoutes: Routes = [
   {
@@ -28,6 +34,12 @@ const adminRoutes: Routes = [
           {path: 'users/detail/:id', component: UserDetailComponent},
           {path: 'categories', component: ManageCategoriesComponent},
           {path: 'categories/detail/:id', component: CategoryDetailComponent},
+          {path: 'roles', component: ManageRolesComponent},
+          {path: 'roles/detail/:id', component: RoleDetailComponent},
+          {path: 'status', component: ManageStatusComponent},
+          {path: 'status/detail/:id', component: StatusDetailComponent},
+          {path: 'units', component: ManageUnitsComponent},
+          {path: 'units/detail/:id', component: UnitDetailComponent},
         ]
       }
     ]
