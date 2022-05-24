@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AdminComponent} from "./admin/admin.component";
-import {ManageUsersComponent} from "./manage-users/manage-users.component";
-import {ManagePostsComponent} from "./manage-posts/manage-posts.component";
+import {ManageUsersComponent} from "./users/manage-users/manage-users.component";
+import {ManagePostsComponent} from "./posts/manage-posts/manage-posts.component";
 import {AuthGuard} from "../auth/auth.guard";
 import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
-import {UserDetailComponent} from "./user-detail/user-detail.component";
-import {TopicDetailComponent} from "./topic-detail/topic-detail.component";
-import {ResponseDetailComponent} from "./response-detail/response-detail.component";
-import {ManageCategoriesComponent} from "./manage-categories/manage-categories.component";
-import {CategoryDetailComponent} from "./category-detail/category-detail.component";
+import {UserDetailComponent} from "./users/user-detail/user-detail.component";
+import {TopicDetailComponent} from "./posts/topic-detail/topic-detail.component";
+import {ResponseDetailComponent} from "./posts/response-detail/response-detail.component";
+import {ManageCategoriesComponent} from "./categories/manage-categories/manage-categories.component";
+import {CategoryDetailComponent} from "./categories/category-detail/category-detail.component";
 
 const adminRoutes: Routes = [
   {

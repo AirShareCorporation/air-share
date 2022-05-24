@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../../interfaces/user";
+import {User} from "../../../interfaces/user";
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-import {UsersService} from "../../services/users/users.service";
+import {UsersService} from "../../../services/users/users.service";
 
 @Component({
   selector: 'app-user-detail',
@@ -29,7 +29,7 @@ export class UserDetailComponent implements OnInit {
     this.userService.getUser(id).subscribe(user => this.user = user);
   }
 
-  goBack(){
+  goBack() {
     this.location.back();
   }
 

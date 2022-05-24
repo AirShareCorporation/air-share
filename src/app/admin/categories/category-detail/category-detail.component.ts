@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
-import {ForumService} from "../../services/forum/forum.service";
-import {Category} from "../../interfaces/category";
+import {ForumService} from "../../../services/forum/forum.service";
+import {Category} from "../../../interfaces/category";
 
 @Component({
   selector: 'app-category-detail',

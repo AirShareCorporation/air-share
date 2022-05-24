@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from "@angular/common";
-import {Topic} from "../../interfaces/topic";
-import {ForumService} from "../../services/forum/forum.service";
+import {Topic} from "../../../interfaces/topic";
+import {ForumService} from "../../../services/forum/forum.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from "@angular/common";
-import {ForumService} from "../../services/forum/forum.service";
+import {ForumService} from "../../../services/forum/forum.service";
 import {ActivatedRoute} from "@angular/router";
-import {Response} from "../../interfaces/response";
+import {Response} from "../../../interfaces/response";
 
 @Component({
   selector: 'app-response-detail',

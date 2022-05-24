@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Topic} from "../../interfaces/topic";
-import {Response} from "../../interfaces/response";
-import {ForumService} from "../../services/forum/forum.service";
+import {Topic} from "../../../interfaces/topic";
+import {Response} from "../../../interfaces/response";
+import {ForumService} from "../../../services/forum/forum.service";
 import {Router} from "@angular/router";
 
 @Component({
