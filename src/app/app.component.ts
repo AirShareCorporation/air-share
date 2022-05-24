@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(() => {
       this.isInAdmin = this.router.url.split('/')[1] === 'admin';
-    })
+    });
   }
 
   title = 'air-share';

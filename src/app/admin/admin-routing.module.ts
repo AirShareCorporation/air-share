@@ -19,7 +19,7 @@ import {UnitDetailComponent} from "./units/unit-detail/unit-detail.component";
 
 const adminRoutes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent,
     canActivate: [AuthGuard],
     children: [

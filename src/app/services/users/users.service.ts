@@ -16,7 +16,6 @@ export class UsersService {
     const user = USERS.find(u => u.id === id)!;
     return of(user);
   }
-
   deleteUser(id: number): Observable<User[]> {
     return of(USERS.filter(u => u.id !== id));
   }

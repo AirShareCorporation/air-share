@@ -4,7 +4,7 @@
 >
   <nav class="border-gray-200">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
-       <a href="#" class="flex items-center">
+       <a routerLink="/Accueil" class="flex items-center">
                         <img src="../../assets/air-quality.png" alt="Aishare-logo" class="mr-3 h-8 text-white">
                         <span class="self-center text-3xl font-semibold whitespace-nowrap text-white">Airshare</span>
                   </a>
@@ -25,7 +25,7 @@
             >Forum</a
           >
         </li>
-        <li>
+        <li #dropdownContainer>
           <button
             id="dropdownNavbarLink"
             data-dropdown-toggle="dropdownNavbar"
@@ -55,14 +55,14 @@
             >
               <li>
                 <a
-                  routerLink=""
+                  routerLink="/meteo"
                   class="text-white mb-2 text-xl self-center transition ease-in hover:text-gray-300"
                   >Méteo</a
                 >
               </li>
               <li>
                 <a
-                  routerLink="/map"
+                  routerLink="/qualityAir"
                   class="text-white mb-2 text-xl self-center transition ease-in hover:text-gray-300"
                   >Qualité de l'air</a
                 >
