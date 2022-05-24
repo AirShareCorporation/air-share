@@ -7,6 +7,8 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { ManagePostsComponent } from './manage-posts/manage-posts.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import {FormsModule} from "@angular/forms";
+import { TopicDetailComponent } from './topic-detail/topic-detail.component';
+import { ResponseDetailComponent } from './response-detail/response-detail.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {FormsModule} from "@angular/forms";
     AdminComponent,
     ManageUsersComponent,
     ManagePostsComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    TopicDetailComponent,
+    ResponseDetailComponent
   ],
   imports: [
     CommonModule,

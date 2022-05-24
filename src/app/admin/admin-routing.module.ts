@@ -6,6 +6,8 @@ import {ManagePostsComponent} from "./manage-posts/manage-posts.component";
 import {AuthGuard} from "../auth/auth.guard";
 import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
 import {UserDetailComponent} from "./user-detail/user-detail.component";
+import {TopicDetailComponent} from "./topic-detail/topic-detail.component";
+import {ResponseDetailComponent} from "./response-detail/response-detail.component";
 
 const adminRoutes: Routes = [
   {
@@ -18,6 +20,8 @@ const adminRoutes: Routes = [
         children: [
           {path: 'dashboard', component: AdminDashboardComponent},
           {path: 'posts', component: ManagePostsComponent},
+          {path: 'posts/topics/detail/:id', component: TopicDetailComponent},
+          {path: 'posts/responses/detail/:id', component: ResponseDetailComponent                                 },
           {path: 'users', component: ManageUsersComponent},
           {path: 'users/detail/:id', component: UserDetailComponent},
         ]
