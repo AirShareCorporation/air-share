@@ -11,13 +11,9 @@ export class AppComponent {
   isInAdmin: boolean = false;
 
   constructor(private router: Router) {
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationStart && event.url.split('/')[1] == 'admin') {
-        this.isInAdmin = true;
-      }else {
-        this.isInAdmin = false;
-      }
-    })
+    this.router.events.subscribe(() => {
+      this.isInAdmin = this.router.url.split('/')[1] === 'admin';
+    });
   }
 
   title = 'air-share';
