@@ -5,7 +5,6 @@ import { MapComponent } from "./map/map.component";
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { RegisterFormComponent } from './forms/register-form/register-form.component';
 import { ResetFormComponent } from './forms/reset-form/reset-form.component';
-import {AdminComponent} from "./admin/admin/admin.component";
 import { HomPageComponent } from './hom-page/hom-page.component';
 
 
@@ -13,7 +12,11 @@ import { HomPageComponent } from './hom-page/hom-page.component';
 const routes: Routes = [
   { path: 'forum', component: ForumComponent },
   { path: 'map', component: MapComponent },
-  { path: 'admin', component: AdminComponent },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    data: { preload: true }
+  },
   { path: 'Accueil', component: HomPageComponent },
   { path: 'inscription', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },

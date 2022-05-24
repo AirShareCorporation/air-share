@@ -14,6 +14,8 @@ export class AppComponent {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart && event.url.split('/')[1] == 'admin') {
         this.isInAdmin = true;
+      }else {
+        this.isInAdmin = false;
       }
     })
   }

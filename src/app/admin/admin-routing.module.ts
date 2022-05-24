@@ -9,7 +9,7 @@ import {UserDetailComponent} from "./user-detail/user-detail.component";
 
 const adminRoutes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent,
     canActivate: [AuthGuard],
     children: [
