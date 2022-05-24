@@ -8,6 +8,8 @@ import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.compone
 import {UserDetailComponent} from "./user-detail/user-detail.component";
 import {TopicDetailComponent} from "./topic-detail/topic-detail.component";
 import {ResponseDetailComponent} from "./response-detail/response-detail.component";
+import {ManageCategoriesComponent} from "./manage-categories/manage-categories.component";
+import {CategoryDetailComponent} from "./category-detail/category-detail.component";
 
 const adminRoutes: Routes = [
   {
@@ -21,9 +23,11 @@ const adminRoutes: Routes = [
           {path: 'dashboard', component: AdminDashboardComponent},
           {path: 'posts', component: ManagePostsComponent},
           {path: 'posts/topics/detail/:id', component: TopicDetailComponent},
-          {path: 'posts/responses/detail/:id', component: ResponseDetailComponent                                 },
+          {path: 'posts/responses/detail/:id', component: ResponseDetailComponent},
           {path: 'users', component: ManageUsersComponent},
           {path: 'users/detail/:id', component: UserDetailComponent},
+          {path: 'categories', component: ManageCategoriesComponent},
+          {path: 'categories/detail/:id', component: CategoryDetailComponent},
         ]
       }
     ]

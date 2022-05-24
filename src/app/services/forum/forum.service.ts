@@ -4,18 +4,18 @@ import {Response} from "../../interfaces/response";
 import {RESPONSES} from "../../mocks/mock-responses";
 import {Topic} from "../../interfaces/topic";
 import {TOPICS} from "../../mocks/mock-topics";
+import {Category} from "../../interfaces/category";
+import {CATEGORIES} from "../../mocks/mock-categories";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ForumService {
 
+  /*-------------------------- TOPICS --------------------------*/
+
   getTopics(): Observable<Topic[]> {
     return of(TOPICS);
-  }
-
-  getResponses(): Observable<Response[]> {
-    return of(RESPONSES);
   }
 
   getTopic(id: number): Observable<Topic> {
@@ -23,16 +23,37 @@ export class ForumService {
     return of(topic);
   }
 
+  deleteTopic(id: number): Observable<Topic[]> {
+    return of(TOPICS.filter(t => t.id !== id));
+  }
+
+  /*-------------------------- RESPONSES --------------------------*/
+
+  getResponses(): Observable<Response[]> {
+    return of(RESPONSES);
+  }
+
   getResponse(id: number): Observable<Response> {
     const response = RESPONSES.find(r => r.id === id)!;
     return of(response);
   }
 
-  deleteTopic(id: number): Observable<Topic[]> {
-    return of(TOPICS.filter(t => t.id !== id));
-  }
-
   deleteResponse(id: number): Observable<Response[]> {
     return of(RESPONSES.filter(r => r.id !== id));
+  }
+
+  /*-------------------------- CATEGORIES --------------------------*/
+
+  getCategories(): Observable<Category[]> {
+    return of(CATEGORIES);
+  }
+
+  getCategory(id: number): Observable<Category> {
+    const category = CATEGORIES.find(c => c.id === id)!;
+    return of(category);
+  }
+
+  deleteCategory(id: number): Observable<Category[]> {
+    return of(CATEGORIES.filter(c => c.id !== id));
   }
 }

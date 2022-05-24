@@ -9,6 +9,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import {FormsModule} from "@angular/forms";
 import { TopicDetailComponent } from './topic-detail/topic-detail.component';
 import { ResponseDetailComponent } from './response-detail/response-detail.component';
+import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
+import { CategoryDetailComponent } from './category-detail/category-detail.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ResponseDetailComponent } from './response-detail/response-detail.compo
     ManagePostsComponent,
     UserDetailComponent,
     TopicDetailComponent,
-    ResponseDetailComponent
+    ResponseDetailComponent,
+    ManageCategoriesComponent,
+    CategoryDetailComponent
   ],
   imports: [
     CommonModule,
