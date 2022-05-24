@@ -18,6 +18,12 @@ export class HeaderComponent implements OnInit {
   @ViewChild("dropdownContainer", { static: false }) dropdownContainer!: ElementRef;
   @ViewChild("popoverDropdownRef", { static: false })
   popoverDropdownRef!: ElementRef;
+  
+
+  constructor(private _elementRef : ElementRef) { }
+
+  ngOnInit(): void {
+  }
 
 
   constructor(private _elementRef : ElementRef) { }
@@ -44,8 +50,8 @@ export class HeaderComponent implements OnInit {
       this.dropdownPopoverShow = true;
     }
   }
-
   closeDropdown(event: any) {
+
 
     if(!this.dropdownContainer.nativeElement.contains(event.target) && this.dropdownPopoverShow) {
       this.dropdownPopoverShow = false
