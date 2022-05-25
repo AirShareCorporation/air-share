@@ -59,25 +59,34 @@ export class AirQualityComponent implements AfterViewInit {
 
   constructAirLayer() {
     for (const city of this.cities) {
-      this.datasService.getAirData(city).subscribe((resp: any) => {
-          const coords: [number, number] = resp.body.data.city.geo;
-          const icon = this.constructIcon(resp);
-          const marker = L.marker([...coords], {icon: icon}).addTo(this.airLayer);
-          const popup = this.constructPopup(resp);
-          marker.bindPopup(popup);
-        }
-      )
+      this.receiveData(city);
     }
   }
 
   receiveData(city: string) {
-    this.datasService.getAirData(city).subscribe((resp: any) => {
-      let city: [number, number] = resp.body.data.city.geo;
-      const icon = this.constructIcon(resp);
-      let marker = L.marker([...city], {icon: icon}).addTo(this.airLayer);
-      const popup = this.constructPopup(resp);
-      marker.bindPopup(popup);
-    })
+    this.datasService.getAirData(city).subscribe(resp => this.constructMarker(resp));
+  }
+
+  constructMarker(resp: any): void {
+    const coords: [number, number] = resp.body.data.city.geo;
+    const icon = this.constructIcon(resp);
+    const marker = L.marker([...coords], {icon: icon}).addTo(this.airLayer);
+    const popup = this.constructPopup(resp);
+    marker.bindPopup(popup);
+  }
+
+  constructIcon(resp: any): L.DivIcon {
+    let markerColor: string | undefined = '';
+    for (const k of this.markerColors.keys()) {
+      if (resp.body.data.iaqi.h.v <= k) {
+        markerColor = this.markerColors.get(k);
+        break;
+      }
+    }
+    return L.divIcon({
+      className: "my-custom-pin",
+      html: `<span class="${markerColor} w-5 h-5 relative bottom-1 right-1 rounded-full origin-center rotate-45 block opacity-75 hover:opacity-100"></span>`
+    });
   }
 
   constructPopup(resp: any): L.Popup {
@@ -92,22 +101,4 @@ export class AirQualityComponent implements AfterViewInit {
         <strong>- PM25 :</strong> ${resp.body.data.iaqi.pm25 ? resp.body.data.iaqi.pm25.v : 'No Data'}
     `);
   }
-
-  constructIcon(resp: any) {
-    let markerColor: string | undefined = '';
-    for (const k of this.markerColors.keys()) {
-      if (resp.body.data.iaqi.h.v <= k) {
-        markerColor = this.markerColors.get(k);
-        break;
-      }
-    }
-    return L.divIcon({
-      className: "my-custom-pin",
-      iconAnchor: [0, 24],
-      popupAnchor: [0, -36],
-      html: `<span class="${markerColor} bg-red-900 w-8 h-8 relative top-0 left-0 rounded-full origin-center rotate-45 block"></span>`
-    });
-  }
-
-
 }
