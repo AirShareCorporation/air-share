@@ -16,6 +16,7 @@ import {ManageStatusComponent} from "./status/manage-status/manage-status.compon
 import {StatusDetailComponent} from "./status/status-detail/status-detail.component";
 import {ManageUnitsComponent} from "./units/manage-units/manage-units.component";
 import {UnitDetailComponent} from "./units/unit-detail/unit-detail.component";
+import {UserCreateComponent} from "./users/user-create/user-create.component";
 
 const adminRoutes: Routes = [
   {
@@ -32,6 +33,7 @@ const adminRoutes: Routes = [
           {path: 'posts/responses/detail/:id', component: ResponseDetailComponent},
           {path: 'users', component: ManageUsersComponent},
           {path: 'users/detail/:id', component: UserDetailComponent},
+          {path: 'users/create', component: UserCreateComponent},
           {path: 'categories', component: ManageCategoriesComponent},
           {path: 'categories/detail/:id', component: CategoryDetailComponent},
           {path: 'roles', component: ManageRolesComponent},
