@@ -105,7 +105,7 @@ export class AirQualityComponent implements AfterViewInit {
       className: "my-custom-pin",
       iconAnchor: [0, 24],
       popupAnchor: [0, -36],
-      html: `<span class="${markerColor} bg-red-900 w-8 h-8 relative top-0 left-0 rounded-full origin-center rotate-45 block"></span>`
+      html: `<span class="${markerColor} w-5 h-5 relative top-2.5 left-0 rounded-full origin-center rotate-45 block"></span>`
     });
   }
 
