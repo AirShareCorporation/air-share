@@ -5,7 +5,6 @@ import {RegisterFormComponent} from './forms/register-form/register-form.compone
 import {ResetFormComponent} from './forms/reset-form/reset-form.component';
 import {HomPageComponent} from './hom-page/hom-page.component';
 
-
 const routes: Routes = [
   {
     path: 'admin',
