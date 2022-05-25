@@ -19,12 +19,10 @@ export class HeaderComponent implements OnInit {
   @ViewChild("popoverDropdownRef", { static: false })
   popoverDropdownRef!: ElementRef;
 
-
   constructor(private _elementRef : ElementRef) { }
 
   ngOnInit(): void {
   }
-
 
   ngAfterViewInit() {
     createPopper(
@@ -46,7 +44,6 @@ export class HeaderComponent implements OnInit {
     }
   }
   closeDropdown(event: any) {
-
 
     if(!this.dropdownContainer.nativeElement.contains(event.target) && this.dropdownPopoverShow) {
       this.dropdownPopoverShow = false
