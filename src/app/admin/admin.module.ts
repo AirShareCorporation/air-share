@@ -17,6 +17,7 @@ import { ManageUnitsComponent } from './units/manage-units/manage-units.componen
 import { RoleDetailComponent } from './roles/role-detail/role-detail.component';
 import { StatusDetailComponent } from './status/status-detail/status-detail.component';
 import { UnitDetailComponent } from './units/unit-detail/unit-detail.component';
+import { UserCreateComponent } from './users/user-create/user-create.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { UnitDetailComponent } from './units/unit-detail/unit-detail.component';
     ManageUnitsComponent,
     RoleDetailComponent,
     StatusDetailComponent,
-    UnitDetailComponent
+    UnitDetailComponent,
+    UserCreateComponent
   ],
   imports: [
     CommonModule,
