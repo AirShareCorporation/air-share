@@ -1,23 +1,21 @@
 <div class="posts font-mono px-20 py-20 flex flex-col basis-4/5">
   <h3 class="text-3xl font-bold pb-10">Manage Users</h3>
   <div class="rounded-md shadow text-md">
-    <div class="grid grid-cols-7 items-center px-8 py-3 bg-gray-50 font-bold border-b border-gray-300">
-      <dt class="mx-5">Name</dt>
-      <dd class="mx-5">Mail Address</dd>
-      <dd class="mx-5">Password</dd>
-      <dd class="mx-5">Role</dd>
-      <dd class="mx-5">Connection Status</dd>
-      <dd class="mx-5">Moderation Status</dd>
-      <dd class="mx-5 text-center">Actions</dd>
+    <div class="grid grid-cols-6 items-center px-8 py-3 bg-gray-50 font-bold border-b border-gray-300">
+      <dt class="">Name</dt>
+      <dd class="">Mail Address</dd>
+      <dd class="">Role</dd>
+      <dd class="">Connection Status</dd>
+      <dd class="">Moderation Status</dd>
+      <dd class=" text-center">Actions</dd>
     </div>
     <div *ngFor="let user of users"
-         class="grid grid-cols-7 items-center text-md font-medium px-5 py-2 border-b border-gray-200 text-gray-800">
-      <dt class="mx-5 basis-1/7">{{user.first_name}} {{user.last_name}}</dt>
-      <dd class="mx-5 basis-1/7">{{user.mail_adress}}</dd>
-      <dd class="mx-5 basis-1/7">{{user.password}}</dd>
-      <dd class="mx-5 basis-1/7">{{user.role_id}}</dd>
-      <dd class="mx-5 basis-1/7">{{user.status_id}}</dd>
-      <dd class="mx-5 basis-1/7">{{user.moderationStatus_id}}</dd>
+         class="grid grid-cols-6 items-center text-md font-medium px-5 py-2 border-b border-gray-200 text-gray-800">
+      <dt class="mx-4 basis-1/6">{{user.first_name}} {{user.last_name}}</dt>
+      <dd class="mx-4 basis-1/6">{{user.mail_adress}}</dd>
+      <dd class="mx-4 basis-1/6">{{user.role_id}}</dd>
+      <dd class="mx-4 basis-1/6">{{user.status_id}}</dd>
+      <dd class="mx-4 basis-1/6">{{user.moderationStatus_id}}</dd>
       <div class="icons flex flex-row items-center justify-evenly">
         <svg
           (click)="selectUser(user)"
