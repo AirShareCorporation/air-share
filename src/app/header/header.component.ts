@@ -14,13 +14,15 @@ export class HeaderComponent implements OnInit {
   isVisible = false
 
   dropdownPopoverShow = false;
+  mobileMenuShow = false
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef!: ElementRef;
+  @ViewChild("btnMenuRef", { static: false }) btnMenuRef!: ElementRef;
   @ViewChild("dropdownContainer", { static: false }) dropdownContainer!: ElementRef;
-  @ViewChild("popoverDropdownRef", { static: false })
-  popoverDropdownRef!: ElementRef;
+  @ViewChild("dropdownMenu", { static: false }) dropdownMenu!: ElementRef;
+  @ViewChild("popoverDropdownRef", { static: false }) popoverDropdownRef!: ElementRef;
   
 
-  constructor(private _elementRef : ElementRef) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -33,6 +35,7 @@ export class HeaderComponent implements OnInit {
         placement: "bottom-start",
       }
     );
+    
   }
 
   toggleDropdown(event : any) {
@@ -42,6 +45,17 @@ export class HeaderComponent implements OnInit {
       this.dropdownPopoverShow = false;
     } else {
       this.dropdownPopoverShow = true;
+    }
+  }
+
+  toggleMobileMenu(event : any) {
+    console.log(this.mobileMenuShow)
+    event.preventDefault();
+
+    if (this.mobileMenuShow) {
+      this.mobileMenuShow = false;
+    } else {
+      this.mobileMenuShow = true;
     }
   }
 

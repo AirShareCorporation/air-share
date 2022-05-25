@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'inscription', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'reset', component: ResetFormComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/Accueil', pathMatch: 'full' },
 ]
 
 @NgModule({
