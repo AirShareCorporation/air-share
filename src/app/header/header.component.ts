@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { createPopper } from "@popperjs/core";
+import { createPopper, popper } from "@popperjs/core";
 
 @Component({
   selector: 'app-header',
@@ -27,13 +27,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  popper: any
+
   ngAfterViewInit() {
-    createPopper(
+    this.popper = createPopper(
       this.btnDropdownRef.nativeElement,
       this.popoverDropdownRef.nativeElement,
       {
         placement: "bottom-start",
-      }
+      },
+      
     );
     
   }
@@ -45,11 +48,11 @@ export class HeaderComponent implements OnInit {
       this.dropdownPopoverShow = false;
     } else {
       this.dropdownPopoverShow = true;
+      this.popper.update()
     }
   }
 
   toggleMobileMenu(event : any) {
-    console.log(this.mobileMenuShow)
     event.preventDefault();
 
     if (this.mobileMenuShow) {

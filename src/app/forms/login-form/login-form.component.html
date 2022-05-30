@@ -1,5 +1,5 @@
-<section class="flex">
-  <div class="mx-20 mt-52 w-1/2 mb-2">
+<section class="md:flex w-10/12 mx-auto md:w-full h-screen">
+  <div class="md:mx-20 mt-52 md:w-1/2 mb-2">
     <h1 class="text-4xl text-center">Connectez-vous</h1>
     <form autocomplete="off" class="mt-2">
       <div class="mb-6">
@@ -15,6 +15,6 @@
     <a routerLink="/reset" class="inline-block mt-3">Mot de passe oublié ?</a>
   </div>
   <div class="w-3/5">
-    <img [src]="'./assets/meteoLogin.jpg'" alt="" class="h-screen">
+    <img [src]="'./assets/meteoLogin.jpg'" alt="" class="h-screen hidden md:block">
   </div>
 </section>
