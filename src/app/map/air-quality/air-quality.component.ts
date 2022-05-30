@@ -25,7 +25,21 @@ export class AirQualityComponent implements AfterViewInit {
     'lille',
     'rennes'
   ];
+  private inseeCodes: string[] = [
+    '75056',
+    '13055',
+    '69123',
+    '31555',
+    '06088',
+    '44109',
+    '34172',
+    '67482',
+    '33063',
+    '59350',
+    '35238'
+  ];
   private airLayer = L.layerGroup();
+  private meteoLayer = L.layerGroup();
   private markerColors: Map<number, string> = new Map([
     [50, 'bg-emerald-600'],
     [100, 'bg-yellow-600'],
@@ -40,6 +54,7 @@ export class AirQualityComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.initMap();
     this.constructAirLayer();
+    this.constructMeteoLayer();
   }
 
   private initMap(): void {
@@ -59,30 +74,41 @@ export class AirQualityComponent implements AfterViewInit {
     layerControl.addOverlay(this.airLayer, "Qualite de l'Air");
   }
 
+  /*---------------------------------- AIR DATA ----------------------------------*/
+
   constructAirLayer() {
     for (const city of this.cities) {
-      this.datasService.getAirData(city).subscribe((resp: any) => {
-          const coords: [number, number] = resp.body.data.city.geo;
-          const icon = this.constructIcon(resp);
-          const marker = L.marker([...coords], {icon: icon}).addTo(this.airLayer);
-          const popup = this.constructPopup(resp);
-          marker.bindPopup(popup);
-        }
-      )
+      this.receiveAirData(city);
     }
   }
 
-  receiveData(city: string) {
-    this.datasService.getAirData(city).subscribe((resp: any) => {
-      let city: [number, number] = resp.body.data.city.geo;
-      const icon = this.constructIcon(resp);
-      let marker = L.marker([...city], {icon: icon}).addTo(this.airLayer);
-      const popup = this.constructPopup(resp);
-      marker.bindPopup(popup);
-    })
+  receiveAirData(city: string) {
+    this.datasService.getAirData(city).subscribe(resp => this.constructAirMarker(resp));
   }
 
-  constructPopup(resp: any): L.Popup {
+  constructAirMarker(resp: any): void {
+    const coords: [number, number] = resp.body.data.city.geo;
+    const icon = this.constructAirIcon(resp);
+    const marker = L.marker([...coords], {icon: icon}).addTo(this.airLayer);
+    const popup = this.constructAirPopup(resp);
+    marker.bindPopup(popup);
+  }
+
+  constructAirIcon(resp: any): L.DivIcon {
+    let markerColor: string | undefined = '';
+    for (const k of this.markerColors.keys()) {
+      if (resp.body.data.iaqi.h.v <= k) {
+        markerColor = this.markerColors.get(k);
+        break;
+      }
+    }
+    return L.divIcon({
+      className: "my-custom-pin",
+      html: `<span class="${markerColor} w-5 h-5 relative bottom-1 right-1 rounded-full origin-center rotate-45 block opacity-75 hover:opacity-100"></span>`
+    });
+  }
+
+  constructAirPopup(resp: any): L.Popup {
     return L.popup()
       .setContent(`
         <p class="font-bold text-indigo-800">${resp.body.data.city.name}</p>
@@ -95,23 +121,12 @@ export class AirQualityComponent implements AfterViewInit {
     `);
   }
 
-  constructIcon(resp: any) {
-    let markerColor: string | undefined = '';
-    for (const k of this.markerColors.keys()) {
-      if (resp.body.data.iaqi.h.v <= k) {
-        markerColor = this.markerColors.get(k);
-        break;
-      }
-    }
-    return L.divIcon({
-      className: "my-custom-pin",
-      iconAnchor: [0, 24],
-      popupAnchor: [0, -36],
-      html: `<span class="${markerColor} w-5 h-5 relative top-2.5 left-0 rounded-full origin-center rotate-45 block"></span>`
+  /*---------------------------------- METEO DATA ----------------------------------*/
+
+  constructMeteoLayer(){
+    this.datasService.getMeteoData('06088').subscribe((resp: any) => {
+      console.log(resp.body.forecast.weather);
     });
-  }
-
-
   /**
    *
    * @param code 
