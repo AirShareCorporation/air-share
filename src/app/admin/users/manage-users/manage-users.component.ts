@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../../interfaces/user";
-import {UsersService} from "../../services/users/users.service";
+import {User} from "../../../interfaces/user";
+import {UsersService} from "../../../services/users/users.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -25,5 +25,14 @@ export class ManageUsersComponent implements OnInit {
 
   selectUser(user: User) {
     this.router.navigate(['admin', 'users', 'detail', user.id]);
+  }
+
+  createUser() {
+    this.router.navigate(['admin', 'users', 'create']);
+  }
+
+  deleteUser(user: User) {
+    this.users = this.users.filter(u => u !== user);
+    this.userService.deleteUser(user.id).subscribe();
   }
 }

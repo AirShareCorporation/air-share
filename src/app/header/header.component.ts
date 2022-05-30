@@ -63,7 +63,6 @@ export class HeaderComponent implements OnInit {
 
   closeDropdown(event: any) {
 
-
     if(!this.dropdownContainer.nativeElement.contains(event.target) && this.dropdownPopoverShow) {
       this.dropdownPopoverShow = false
     }

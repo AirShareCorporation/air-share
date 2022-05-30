@@ -1,0 +1,42 @@
+<div *ngIf="topic" class="bg-white shadow overflow-hidden sm:rounded-lg mx-10 my-10">
+  <div class="detail-header flex justify-between items-center">
+    <div class="px-4 py-5 sm:px-6">
+      <h3 class="text-lg leading-6 font-medium text-gray-900">Topic Information</h3>
+    </div>
+    <button
+      (click)="goBack()"
+      type="button"
+      class="focus:outline-none text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-5 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-900 h-fit"
+    >Valider
+    </button>
+  </div>
+  <div class="border-t border-gray-200">
+    <dl>
+      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <label for="topic-title" class="text-sm font-medium text-gray-500 py-2.5">Title</label>
+        <input [(ngModel)]="topic.title" id="topic-title" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+      </div>
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <label for="topic-content" class="text-sm font-medium text-gray-500 py-2.5">Content</label>
+        <textarea [(ngModel)]="topic.message" id="topic-content" type="text" class="h-44 mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"></textarea>
+      </div>
+      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <label for="topic-writtenat" class="text-sm font-medium text-gray-500 py-2.5">Written At</label>
+        <input [(ngModel)]="topic.written_at" id="topic-writtenat" type="datetime-local" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+      </div>
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <label for="topic-user" class="text-sm font-medium text-gray-500 py-2.5">User</label>
+        <input [(ngModel)]="topic.user_id" id="topic-user" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+      </div>
+      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <label for="topic-category" class="text-sm font-medium text-gray-500 py-2.5">Category</label>
+        <input [(ngModel)]="topic.category_id" id="topic-category" type="text" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+      </div>
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <label for="topic-highlight" class="text-sm font-medium text-gray-500 py-2.5">Highlight ?</label>
+        <input [(ngModel)]="topic.highlight" id="topic-highlight" type="checkbox" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+      </div>
+    </dl>
+  </div>
+</div>
+

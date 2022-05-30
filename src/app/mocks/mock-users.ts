@@ -22,7 +22,7 @@ export const USERS: User[] = [
     moderationStatus_id: 1
   },
   {
-    id: 2,
+    id: 3,
     first_name: 'Josselyne',
     last_name: 'Espingouin',
     mail_adress: 'joss@gmail.com',

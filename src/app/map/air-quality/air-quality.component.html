@@ -6,8 +6,8 @@
   <input #inputCity name="city"  type="text" placeholder="recherche une ville" class="rounded" autocomplete="off"/>
   <button (click)="receiveData(inputCity.value)" type="submit" class="bg-blue-500 text-white p-1 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
 </div>
-<section class="grid grid-cols-3 font-mono">
-  <div class=" w-96 h-96 rounded shadow-lg mx-auto p-10 mt-10">
+<section class="lg:grid lg:grid-cols-3 sm:grid-cols-1 font-mono">
+  <div class="w-80 h-96 rounded shadow mx-auto p-10 mt-10">
     <div>
       <h1 class="text-center text-lg text-[#4B63A8]">Indice de qualité de l'air</h1>
         <div class="flex items-center justify-center mt-5">
@@ -40,13 +40,15 @@
         </div>
     </div>
   </div>
-  <div class="h-screen mt-10">
-    <div id="map" class="w-full"></div>
+  <div class="lg:h-screen mt-10 sm:h-5/6">
+    <div id="map" class="lg:w-full sm:w-5/6 sm:mx-auto"></div>
   </div>
-  <div class="mx-auto mt-10">
-    <input type="text" placeholder="recensement d'une ville" class="rounded w-64" autocomplete="off"/>
-    <button type="submit" class="bg-blue-500 text-white p-2 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
-    <div class="mt-20 w-72 text-center">
+  <div class="mx-auto mt-10 sm:mt-5">
+    <div class="flex justify-center">
+      <input type="text" placeholder="recensement d'une ville" class="rounded" autocomplete="off"/>
+      <button type="submit" class="bg-blue-500 text-white p-2 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
+    </div>
+    <div class="lg:mt-20 sm:mt-5 sm:mb-5 sm:mx-auto sm:w-72 text-center">
       <div class="shadow-lg rounded-md p-3">
         <span>Ville : Nantes</span>
         <p>Population : 22501</p>
