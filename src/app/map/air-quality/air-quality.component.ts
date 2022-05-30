@@ -10,6 +10,8 @@ import {DatasService} from 'src/app/services/datas/datas.service';
 export class AirQualityComponent implements AfterViewInit {
 
   private map: any;
+  censusValue?: string;
+  cityName?: string;
   private cities: string[] = [
     'paris',
     'marseille',
@@ -105,9 +107,19 @@ export class AirQualityComponent implements AfterViewInit {
       className: "my-custom-pin",
       iconAnchor: [0, 24],
       popupAnchor: [0, -36],
-      html: `<span class="${markerColor} bg-red-900 w-8 h-8 relative top-0 left-0 rounded-full origin-center rotate-45 block"></span>`
+      html: `<span class="${markerColor} w-5 h-5 relative top-2.5 left-0 rounded-full origin-center rotate-45 block"></span>`
     });
   }
 
 
+  /**
+   *
+   * @param code 
+   */
+  dataCensus(code: string) {
+    this.datasService.getCensusData(code).subscribe((resp: any) => {
+      this.censusValue = resp.body.Cellule[0].Valeur;
+      this.cityName = resp.body.Zone.Millesime.Nccenr;
+    })
+  }
 }

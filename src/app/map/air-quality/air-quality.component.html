@@ -3,7 +3,7 @@
 </div>
 
 <div class="flex justify-center mt-5">
-  <input #inputCity name="city"  type="text" placeholder="recherche une ville" class="rounded" autocomplete="off"/>
+  <input #inputCity name="city" type="text" placeholder="recherche une ville" class="rounded" autocomplete="off"/>
   <button (click)="receiveData(inputCity.value)" type="submit" class="bg-blue-500 text-white p-1 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
 </div>
 <section class="lg:grid lg:grid-cols-3 sm:grid-cols-1 font-mono">
@@ -45,24 +45,14 @@
   </div>
   <div class="mx-auto mt-10 sm:mt-5">
     <div class="flex justify-center">
-      <input type="text" placeholder="recensement d'une ville" class="rounded" autocomplete="off"/>
-      <button type="submit" class="bg-blue-500 text-white p-2 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
+      <input type="text" #code placeholder="recensement d'une ville" class="rounded" autocomplete="off"/>
+      <button type="submit" (click)="dataCensus(code.value)" class="bg-blue-500 text-white p-2 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
     </div>
     <div class="lg:mt-20 sm:mt-5 sm:mb-5 sm:mx-auto sm:w-72 text-center">
       <div class="shadow-lg rounded-md p-3">
-        <span>Ville : Nantes</span>
-        <p>Population : 22501</p>
+        <span>Ville : {{ cityName }}</span>
+        <p>Population : {{ censusValue }}</p>
       </div>
     </div>
   </div>
 </section>
-
-
-
-
-
-
-  <!-- <input #inputCity type="text" name="city" class="rounded-full p-0"/>
-  <button class="p-1 rounded-full bg-blue-500 text-white" (click)="receiveData(inputCity.value)" type="submit">Validez</button> -->
-  <!-- <input #code type="text" class="rounded-full p-0" name="census" id="census" placeholder="Enter a city">
-  <button class="p-1 rounded-full bg-blue-500 text-white" (click)="getInseeCode(code.value)">Validez</button> -->
