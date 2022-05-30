@@ -10,6 +10,7 @@ export class DatasService {
   constructor(private http: HttpClient) {
   }
 
+
   getAirData(city: string) {
     return this.http.get(`https://api.waqi.info/feed/${city}`, {
       responseType: 'json',
@@ -29,7 +30,6 @@ export class DatasService {
       observe: 'response'
     });
   };
-
   getMeteoData(code: string) {
     return this.http.get(`https://api.meteo-concept.com/api/forecast/daily?insee=${code}`, {
       observe: 'response',
