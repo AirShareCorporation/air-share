@@ -5,8 +5,8 @@
   <nav class="border-gray-200 w-full">
     <div class="container flex flex-wrap items-center justify-around mx-auto z-50">
        <a href="#" class="flex items-center">
-          <img src="../../assets/air-quality.png" alt="Aishare-logo" class="mr-3 h-8 text-white">  
-          <span class="self-center text-3xl font-semibold whitespace-nowrap text-white">Airshare</span>
+          <img src="../../assets/air-quality.png" alt="Aishare-logo" class="mr-4 h-14 text-white">  
+          <span class="self-center text-3xl font-semibold whitespace-nowrap text-white text-5xl">Airshare</span>
         </a>
         
         <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-white transition ease-in rounded-lg md:hidden hover:bg-gray-100 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 z-50" #btnMenuRef (click)="toggleMobileMenu($event)" aria-controls="mobile-menu" aria-expanded="false">
@@ -15,7 +15,7 @@
           <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
         </button>
       <div class="w-full md:block sm:bg-sky-600 " id="mobile-menu" #dropdownMenu [ngClass]="mobileMenuShow ? 'block' : 'hidden'">
-        <ul class="md:flex w-28 md:w-10/12 justify-center text-center mx-auto mt-4 text-sm font-medium">
+        <ul class="md:flex w-28 md:w-10/12 justify-center lg:justify-around text-center mx-auto mt-4 text-sm font-medium">
           <li class="py-2">
             <a
             routerLink="/Accueil"
@@ -32,72 +32,64 @@
             >Forum</a
             >
         </li>
-          <li #dropdownContainer class="py-2">
-            <button
-            id="dropdownNavbarLink"
-            data-dropdown-toggle="dropdownNavbar"
-            class="text-xl flex items-center text-white justify-between w-full pl-3 pr-4 f hover:bg-transparent transition ease-in hover:text-gray-300"
-            (click)="toggleDropdown($event)"
-            #btnDropdownRef
+        <li class="py-2">
+          <a
+            routerLink="/map/qualityAir"
+            class="text-xl block pl-3 pr-4 text-white rounded transition ease-in hover:text-gray-300"
+            >Qualité de l'air</a
+          >
+        </li>
+        <li #dropdownContainer class="py-2">
+          <button
+          id="dropdownNavbarLink"
+          data-dropdown-toggle="dropdownNavbar"
+          class="text-xl flex items-center right-px text-white justify-between w-full pl-3 pr-4 f hover:bg-transparent transition ease-in hover:text-gray-300"
+          (click)="toggleDropdown($event)"
+          #btnDropdownRef
+          >
+          Compte
+          <svg
+            class="w-4 h-4 ml-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          </button>
+        </li>
+        <div class="z-50" #popoverDropdownRef>
+          <ul
+            id="dropdownNavbar"
+            class="right-10 bg-sky-600 px-5 py-5 md:top-24 divide-y divide-white-100 rounded shadow w-44"
+            [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'"
+          >
+          <li class="py-2">
+            <a
+            routerLink="inscription"
+            class="text-white text-xl block pl-3 pr-4 hover:bg-transparent border-0 transition ease-in hover:text-gray-300"
+            >Créer un compte</a
             >
-            Cartes
-            <svg
-              class="w-4 h-4 ml-1"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            </button>
           </li>
-          <div class="z-50" #popoverDropdownRef>
-            <ul
-              id="dropdownNavbar"
-              class="md:bg-sky-600 px-5 py-5 top-24 divide-y divide-white-100 rounded shadow w-44"
-              [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'"
-            >
-              <li>
-                <a
-                  routerLink="/map/meteo"
-                  class="text-white mb-2 text-xl self-center transition ease-in hover:text-gray-300"
-                  >Méteo</a
-                >
-              </li>
-              <li>
-                <a
-                  routerLink="/map/qualityAir"
-                  class="text-white mb-2 text-xl self-center transition ease-in hover:text-gray-300"
-                  >Qualité de l'air</a
-                >
-              </li>
-            </ul>
-          </div>
-        <li class="py-2">
-          <a
-          routerLink="inscription"
-          class="text-white text-xl block pl-3 pr-4 hover:bg-transparent border-0 transition ease-in hover:text-gray-300"
-          >Créer un compte</a
-          >
-        </li>
-        <li class="py-2">
-          <a
-            routerLink="/login"
-            class="text-white text-xl block pl-3 pr-4 hover:bg-transparent border-0 transition ease-in hover:text-gray-300"
-            >Login</a
-            >
-        </li>
-        <li class="py-2">
-          <a
-            routerLink="/admin/dashboard"
-            class="text-white text-xl block pl-3 pr-4 hover:bg-transparent border-0 transition ease-in hover:text-gray-300"
-            >Admin</a
-          >
-        </li>
+          <li class="py-2">
+            <a
+              routerLink="/login"
+              class="text-white text-xl block pl-3 pr-4 hover:bg-transparent border-0 transition ease-in hover:text-gray-300"
+              >Login</a>
+          </li>
+            <li class="py-2">
+              <a
+                routerLink="/admin/dashboard"
+                class="text-white text-xl block pl-3 pr-4 hover:bg-transparent border-0 transition ease-in hover:text-gray-300"
+                >Admin</a
+              >
+            </li>
+          </ul>
+        </div>
       </ul>
     </div>
   </div>
