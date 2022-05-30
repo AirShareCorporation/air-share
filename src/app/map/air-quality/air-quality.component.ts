@@ -10,6 +10,8 @@ import {DatasService} from 'src/app/services/datas/datas.service';
 export class AirQualityComponent implements AfterViewInit {
 
   private map: any;
+  censusValue?: string;
+  cityName?: string;
   private cities: string[] = [
     'paris',
     'marseille',
@@ -110,4 +112,14 @@ export class AirQualityComponent implements AfterViewInit {
   }
 
 
+  /**
+   *
+   * @param code 
+   */
+  dataCensus(code: string) {
+    this.datasService.getCensusData(code).subscribe((resp: any) => {
+      this.censusValue = resp.body.Cellule[0].Valeur;
+      this.cityName = resp.body.Zone.Millesime.Nccenr;
+    })
+  }
 }
