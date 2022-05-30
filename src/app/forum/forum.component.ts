@@ -13,6 +13,7 @@ import {UsersService} from "../services/users/users.service";
 export class ForumComponent implements OnInit {
   
   topics: Topic[] = TOPICS;
+  
 
   constructor() { }
 
