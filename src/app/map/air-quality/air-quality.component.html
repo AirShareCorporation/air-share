@@ -3,50 +3,55 @@
 </div>
 
 <div class="flex justify-center mt-5">
-  <input #inputCity name="city"  type="text" placeholder="recherche une ville" class="rounded" autocomplete="off"/>
-  <button (click)="receiveData(inputCity.value)" type="submit" class="bg-blue-500 text-white p-1 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
+  <input #inputCity name="city" type="text" placeholder="Recherchez une ville..." class="rounded" autocomplete="off"/>
+  <button (click)="receiveAirData(inputCity.value)" type="submit"
+          class="bg-blue-500 text-white p-1 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez
+  </button>
 </div>
-<section class="lg:grid lg:grid-cols-3 sm:grid-cols-1 font-mono">
-  <div class="w-80 h-96 rounded shadow mx-auto p-10 mt-10">
+<section class="lg:flex sm:grid-cols-1 font-mono lg:px-5">
+  <div class="rounded shadow mx-auto p-10 mt-10 lg:basis-1/5 h-fit">
     <div>
-      <h1 class="text-center text-lg text-[#4B63A8]">Indice de qualité de l'air</h1>
-        <div class="flex items-center justify-center mt-5">
-          <ul>
-            <li class="mb-3 text-[#4B63A8] text-lg">
-              <i class="circle-green align-middle"></i>
-              Bon
-            </li>
-            <li class="mb-3 text-[#4B63A8] text-lg">
-              <i class="circle-yellow align-middle"></i>
-              Moyen
-            </li>
-            <li class="mb-3 text-[#4B63A8] text-lg">
-              <i class="circle-orange align-middle"></i>
-              Dégradé
-            </li>
-            <li class="mb-3 text-[#4B63A8] text-lg">
-              <i class="circle-red align-middle"></i>
-              Mauvais
-            </li>
-            <li class="mb-3 text-[#4B63A8] text-lg">
-              <i class="circle-purple align-middle"></i>
-              Très mauvais
-            </li>
-            <li class="mb-3 text-[#4B63A8] text-lg">
-              <i class="circle-dark align-middle"></i>
-              Dangereux
-            </li>
-          </ul>
-        </div>
+      <h1 class="text-center text-sm text-[#4B63A8]">Indice de qualité de l'air</h1>
+      <div class="flex items-center justify-center mt-5">
+        <ul>
+          <li class="mb-3 text-[#4B63A8] text-sm">
+            <i class="circle-green align-middle"></i>
+            Bon
+          </li>
+          <li class="mb-3 text-[#4B63A8] text-sm">
+            <i class="circle-yellow align-middle"></i>
+            Moyen
+          </li>
+          <li class="mb-3 text-[#4B63A8] text-sm">
+            <i class="circle-orange align-middle"></i>
+            Dégradé
+          </li>
+          <li class="mb-3 text-[#4B63A8] text-sm">
+            <i class="circle-red align-middle"></i>
+            Mauvais
+          </li>
+          <li class="mb-3 text-[#4B63A8] text-sm">
+            <i class="circle-purple align-middle"></i>
+            Très mauvais
+          </li>
+          <li class="mb-3 text-[#4B63A8] text-sm">
+            <i class="circle-dark align-middle"></i>
+            Dangereux
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="lg:h-screen mt-10 sm:h-5/6">
+  <div class="lg:h-screen mt-10 sm:h-5/6 lg:basis-3/5 lg:mx-5">
     <div id="map" class="lg:w-full sm:w-5/6 sm:mx-auto"></div>
   </div>
-  <div class="mx-auto mt-10 sm:mt-5">
+  <div class="mx-auto mt-10 sm:mt-5 lg:basis-1/5">
     <div class="flex justify-center">
-      <input type="text" placeholder="recensement d'une ville" class="rounded" autocomplete="off"/>
-      <button type="submit" class="bg-blue-500 text-white p-2 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">Validez</button>
+      <input type="text" placeholder="Recherchez une ville..." class="rounded" autocomplete="off"/>
+      <button type="submit"
+              class="bg-blue-500 text-white p-2 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">
+        Validez
+      </button>
     </div>
     <div class="lg:mt-20 sm:mt-5 sm:mb-5 sm:mx-auto sm:w-72 text-center">
       <div class="shadow-lg rounded-md p-3">
@@ -56,13 +61,3 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
-  <!-- <input #inputCity type="text" name="city" class="rounded-full p-0"/>
-  <button class="p-1 rounded-full bg-blue-500 text-white" (click)="receiveData(inputCity.value)" type="submit">Validez</button> -->
-  <!-- <input #code type="text" class="rounded-full p-0" name="census" id="census" placeholder="Enter a city">
-  <button class="p-1 rounded-full bg-blue-500 text-white" (click)="getInseeCode(code.value)">Validez</button> -->

@@ -29,4 +29,15 @@ export class DatasService {
       observe: 'response'
     });
   };
+
+  getMeteoData(code: string) {
+    return this.http.get(`https://api.meteo-concept.com/api/forecast/daily?insee=${code}`, {
+      observe: 'response',
+      headers: {
+        'Authorization': 'Bearer 8e60ef9fa49f04b6ca49ac2cae77a277f9a92221cd85518ce7f0d5cedfce32de',
+        'Access-Control-Allow-Origin': 'http://localhost:4200',
+        'Accept': 'application/json'
+      }
+    });
+  }
 }

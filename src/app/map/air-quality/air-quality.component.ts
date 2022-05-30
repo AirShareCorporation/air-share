@@ -23,7 +23,21 @@ export class AirQualityComponent implements AfterViewInit {
     'lille',
     'rennes'
   ];
+  private inseeCodes: string[] = [
+    '75056',
+    '13055',
+    '69123',
+    '31555',
+    '06088',
+    '44109',
+    '34172',
+    '67482',
+    '33063',
+    '59350',
+    '35238'
+  ];
   private airLayer = L.layerGroup();
+  private meteoLayer = L.layerGroup();
   private markerColors: Map<number, string> = new Map([
     [50, 'bg-emerald-600'],
     [100, 'bg-yellow-600'],
@@ -38,6 +52,7 @@ export class AirQualityComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.initMap();
     this.constructAirLayer();
+    this.constructMeteoLayer();
   }
 
   private initMap(): void {
@@ -57,25 +72,27 @@ export class AirQualityComponent implements AfterViewInit {
     layerControl.addOverlay(this.airLayer, "Qualite de l'Air");
   }
 
+  /*---------------------------------- AIR DATA ----------------------------------*/
+
   constructAirLayer() {
     for (const city of this.cities) {
-      this.receiveData(city);
+      this.receiveAirData(city);
     }
   }
 
-  receiveData(city: string) {
-    this.datasService.getAirData(city).subscribe(resp => this.constructMarker(resp));
+  receiveAirData(city: string) {
+    this.datasService.getAirData(city).subscribe(resp => this.constructAirMarker(resp));
   }
 
-  constructMarker(resp: any): void {
+  constructAirMarker(resp: any): void {
     const coords: [number, number] = resp.body.data.city.geo;
-    const icon = this.constructIcon(resp);
+    const icon = this.constructAirIcon(resp);
     const marker = L.marker([...coords], {icon: icon}).addTo(this.airLayer);
-    const popup = this.constructPopup(resp);
+    const popup = this.constructAirPopup(resp);
     marker.bindPopup(popup);
   }
 
-  constructIcon(resp: any): L.DivIcon {
+  constructAirIcon(resp: any): L.DivIcon {
     let markerColor: string | undefined = '';
     for (const k of this.markerColors.keys()) {
       if (resp.body.data.iaqi.h.v <= k) {
@@ -89,7 +106,7 @@ export class AirQualityComponent implements AfterViewInit {
     });
   }
 
-  constructPopup(resp: any): L.Popup {
+  constructAirPopup(resp: any): L.Popup {
     return L.popup()
       .setContent(`
         <p class="font-bold text-indigo-800">${resp.body.data.city.name}</p>
@@ -100,5 +117,13 @@ export class AirQualityComponent implements AfterViewInit {
         <strong>- PM10 :</strong> ${resp.body.data.iaqi.pm10 ? resp.body.data.iaqi.pm10.v : 'No Data'}<br>
         <strong>- PM25 :</strong> ${resp.body.data.iaqi.pm25 ? resp.body.data.iaqi.pm25.v : 'No Data'}
     `);
+  }
+
+  /*---------------------------------- METEO DATA ----------------------------------*/
+
+  constructMeteoLayer(){
+    this.datasService.getMeteoData('06088').subscribe((resp: any) => {
+      console.log(resp.body.forecast.weather);
+    });
   }
 }
