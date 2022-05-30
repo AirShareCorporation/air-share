@@ -9,7 +9,7 @@
   </button>
 </div>
 <section class="lg:flex sm:grid-cols-1 font-mono lg:px-5">
-  <div class="rounded shadow mx-auto p-10 mt-10 lg:basis-1/5 h-fit">
+  <div class="rounded shadow mx-auto p-10 mt-10 lg:basis-1/5 h-fit w-fit">
     <div>
       <h1 class="text-center text-sm text-[#4B63A8]">Indice de qualité de l'air</h1>
       <div class="flex items-center justify-center mt-5">
@@ -42,13 +42,13 @@
       </div>
     </div>
   </div>
-  <div class=" lg:h-screen mt-10 sm:h-5/6">
-    <div id="map" class=" lg:w-full w-5/6 mx-auto"></div>
+  <div class="w-5/6 lg:h-screen mt-10 sm:h-5/6 mx-5">
+    <div id="map" class="lg:w-full w-5/6 mx-auto"></div>
   </div>
   <div class="mx-auto mt-10 sm:mt-5 lg:basis-1/5">
     <div class="flex justify-center">
-      <input type="text" placeholder="Recherchez une ville..." class="rounded" autocomplete="off"/>
-      <button type="submit"
+      <input #code type="text" placeholder="Recherchez une ville..." class="rounded" autocomplete="off"/>
+      <button type="submit" (click)="dataCensus(code.value)"
               class="bg-blue-500 text-white p-2 w-32 mx-2 rounded hover:bg-blue-400 transition duration-300 ease-in">
         Validez
       </button>

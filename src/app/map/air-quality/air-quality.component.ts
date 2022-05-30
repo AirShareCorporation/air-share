@@ -54,7 +54,7 @@ export class AirQualityComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.initMap();
     this.constructAirLayer();
-    this.constructMeteoLayer();
+    // this.constructMeteoLayer();
   }
 
   private initMap(): void {
@@ -83,7 +83,7 @@ export class AirQualityComponent implements AfterViewInit {
   }
 
   receiveAirData(city: string) {
-    this.datasService.getAirData(city).subscribe(resp => this.constructAirMarker(resp));
+    this.datasService.getAirData(city).subscribe((resp:any) => this.constructAirMarker(resp));
   }
 
   constructAirMarker(resp: any): void {
@@ -127,14 +127,12 @@ export class AirQualityComponent implements AfterViewInit {
     this.datasService.getMeteoData('06088').subscribe((resp: any) => {
       console.log(resp.body.forecast.weather);
     });
-  /**
-   *
-   * @param code 
-   */
+  }
+
   dataCensus(code: string) {
     this.datasService.getCensusData(code).subscribe((resp: any) => {
       this.censusValue = resp.body.Cellule[0].Valeur;
       this.cityName = resp.body.Zone.Millesime.Nccenr;
-    })
+    });
   }
 }
