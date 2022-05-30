@@ -10,19 +10,20 @@ import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
-  { path: 'forum',
-    loadChildren: () => import('./forum/forum.module').then(m => m.ForumModule),
-  },
-  { path: 'map', component: MapComponent },
-  { path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
-    canLoad: [AuthGuard]
+  {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    data: { preload: true }
   },
   { path: 'Accueil', component: HomPageComponent },
   { path: 'inscription', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'reset', component: ResetFormComponent },
+<<<<<<< HEAD
   { path: '', redirectTo: '/Accueil', pathMatch: 'full' },
+=======
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: 'forum', loadChildren: () => import('./forum/forum.module').then(m => m.ForumModule) },
+  { path: 'map', loadChildren: () => import('./map/map.module').then(m => m.MapModule) },
+>>>>>>> fad24c64e7789cb637bcc493bb8ef1654b1dd509
 ]
 
 @NgModule({
